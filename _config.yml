@@ -1,0 +1,8 @@
+name: Blog
+markdown: redcarpet
+pygments: true
+
+port: 8080
+
+author:
+    name: vergiliu
