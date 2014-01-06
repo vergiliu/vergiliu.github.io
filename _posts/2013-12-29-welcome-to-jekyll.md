@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2013-12-29 22:29:48
-categories: jekyll update
+categories: jekyll
 tags: learning
 ---
 
