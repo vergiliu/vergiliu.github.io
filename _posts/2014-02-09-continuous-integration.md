@@ -14,6 +14,8 @@ Automating builds, failing fast and using a dedicated build machine for quicker 
 
 I would recommend this book for everyone who needs to have an introduction to the whole CI (Integration) and CD (Delivery) of software, and get some solid good practices from this industry.
 
+_"How reliable do you want your software to be? Source code is only as reliable as the test coverage, and tests are only as valuabe as their execution frequency. By segregating tests into four automatable categories mapping to unit, component, system and functional, a CI system can be configured to execute tests in an efficient manner."_
+
 Rating 4/5
 
 [Amazon]: http://www.amazon.com/Continuous-Integration-Improving-Software-Reducing/dp/0321336380
