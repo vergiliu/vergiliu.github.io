@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Woken Furies"
-date:   2014-03-06 19:00:00
+date:   2014-06-03 19:00:00
 categories: [books, reviews]
 tags: [books, reviews, 2014]
 ---
