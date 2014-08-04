@@ -1,0 +1,1 @@
+- shuffle: swap i and r, where r is a random between 0 and length(array)
