@@ -2,6 +2,15 @@ Relative references:
 - git branch newBranchName
 - git checkout moveToThisBranch
 - one can go "up the tree" w/ git checkout HEAD^ repeatedly
-- git merge otherBranch
+- git merge otherBranch, creates one merged branch from 2 different branches
+- git rebase otherBranch, copies all commits from the other branch onto current branch
 - detached HEAD, when doing git checkout hash1235, as we are no longer in a specific "place"
 - HEAD is current place in the tree where we are
+- force assignment master branch to 3 commits up using relative refs ~ operator: git branch -f master HEAD~3
+- git reset HEAD^ rewrite history as there were no commits, only works on local commits
+- git revert HEAD for remote/pushed changes
+- git cherry-pick commit1/hash1 commit2/hash2 (...) selects only the commits desired
+- git rebase -i , for interactive rebasing, squash commits means merging them into 1, pick means dropping the commits
+- git commit --amend to update the commit message
+- git tag tagName hash/branch, to freeze in time the git repo state
+- git describe reference, to see information about the commits state
