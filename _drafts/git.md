@@ -5,7 +5,9 @@ Local git commands:
     - git checkout HEAD~NUMBER, where NUMBER is the number of commits to go back
     - same applies to the HEAD's parent ^ (caret), ^ or ^1 is previous HEAD where ^2 is the branch
 - git merge otherBranch, creates one merged branch from 2 different branches
+    - git merge SOURCE, for example if there are 2 branches br1, br2 and we're on br1 you do git merge br2
 - git rebase otherBranch, copies all commits from the other branch onto current branch
+    - git rebase DESTINATION, for example if there are 2 branches br1, br2 and we want to rebase to br2 we go to br1 and do git rebase br2
 - detached HEAD, when doing git checkout hash1235, as we are no longer in a specific "place"
     - HEAD is current place in the tree where we are
 - force assignment master branch to 3 commits up using relative refs ~ operator: git branch -f master HEAD~3
@@ -25,6 +27,10 @@ Remote git commands:
 - in order to have git fetch and git merge/rebase/cherry-pick git provides a special command
 - git pull
     - "is essentially shorthand for a git fetch followed by a merge of whatever branch was just fetched"
+    - git pull --rebase does a fetch and then a rebase, as compared to default fetch & merge
+- git push
+    - share our awesome work with the world, or at least the ones fetching from the remote repo
+    - specific settings depending on push.default and git version
 
 Other commands:
-- git bisect,
+- git bisect, searching through history
