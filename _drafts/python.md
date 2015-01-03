@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Python"
-date: 2014-09-30 22:22:22
+date: 2015-12-31 22:22:22
+started_on: 2013-11-15
 categories: jekyll
 tags: books
 ---
@@ -163,7 +164,7 @@ Learning Python 5th edition [nov2013-] (ebook)
 
 #####Chapter 26: OOP
 - multiple inheritance is possible
-- referring to current object (`this`-equivalent) is done by using the `self` keyword
+- referring to current object (`this` - equivalent) is done by using the `self` keyword
 - \_\_init\_\_ method used as a constructor, class name(inherit_1, inherit_2) using LtR order of precedence
 - method names surround by double underscores are special hooks
 - new-style classes available in Python3 have some built-in hooks available, but not the usual ones

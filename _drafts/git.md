@@ -24,6 +24,10 @@ Remote git commands:
 - git clone
 - git fetch, gets remote changes and updates where the local repo points to, but it will not update the local repo
     - it will not change anything in the local
+    - same refspec <source>:<destination> works for both fetch and push, only in reverse
+        - for fetch the source will be remote branch and destination will be local branch, they will get created if not present
+        - for push the source will be the remote branch...
+    - fetching with empty origin will just create the local branch git fetch origin :newBranch, from master
 - in order to have git fetch and git merge/rebase/cherry-pick git provides a special command
 - git pull
     - "is essentially shorthand for a git fetch followed by a merge of whatever branch was just fetched"
@@ -31,6 +35,12 @@ Remote git commands:
 - git push
     - share our awesome work with the world, or at least the ones fetching from the remote repo
     - specific settings depending on push.default and git version
+    - git push <remote> <place>, where git push origin master - origin is the name of the remote and master the place where the commits come from
+        - then the local branch is not important
+    - git push origin <source>:<destination> , refspec identifying where to push from and to on the `origin`
+    - git push origin :foo , we can delete the local branch remotely as no branch was present locally (empty origin)
+- we can update the default tracking branch either remote or local
+    - -b local_name, -u remote branch name (can be omitted if on that branch currently)
 
 Other commands:
 - git bisect, searching through history

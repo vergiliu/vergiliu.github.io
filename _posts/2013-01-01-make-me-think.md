@@ -1,6 +1,12 @@
-###Don't Make Me Think by Steve Krug [oct2012]
-The "bible" of web usability in its second incarnation. A couple of ideas or reminders from the book:
-
+---
+layout: post
+title: "Cucumber"
+date: 2013-01-01 22:22:22
+categories: [books, reviews]
+tags: [books, reviews, 2013]
+---
+`Don't Make Me Think by Steve Krug`
+The "bible" of web usability in its second incarnation. A couple of ideas or take-aways from the book:
 + Make the site natural to the user and his actions
 + Build billboards not newspapers
 + Make stuff visible and easy to determine what's its function to the user
@@ -16,3 +22,5 @@ The "bible" of web usability in its second incarnation. A couple of ideas or rem
 + try to involve different people from different teams in order to get more traction and involvement during the (usability) testing
 + ask the tester to do some specific tasks besides
 + After the walkthroughs review/go over the notes as soon as possible
+
+Rating 5/5
