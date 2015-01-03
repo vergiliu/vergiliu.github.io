@@ -14,7 +14,11 @@ A couple worth mentioning would be ActiveRecord (working with databases),
 
 Below you can find some "might-be-useful" ideas from the book:
 - Tags can be used to execute just certain scenarios
+- Different formatters for the output, i.e. `-f rerun` to easily try out failing steps
 - Tagged hooks in order to run certain scenarios only on tagged steps
+- we can store various profiles in the cucumber.yml file so we run different features/suites depending on situation
+    - also more output options to display a HTML report
+    - @wip tag for the features being actively developed
 - Approaches on handling various situation: databases, async calls, web applications
 
 Rating /5
