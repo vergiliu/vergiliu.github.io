@@ -19,7 +19,8 @@ Below you can find some "might-be-useful" ideas from the book:
 - we can store various profiles in the cucumber.yml file so we run different features/suites depending on situation
     - also more output options to display a HTML report
     - @wip tag for the features being actively developed
--
+- when working with existing systems:
+    - start somewhere with a simple scenario, implement a bug report as a scenario
 - Approaches on handling various situation: databases, async calls, web applications
 
 Rating /5
