@@ -16,6 +16,8 @@ Below you can find some "might-be-useful" ideas from the book:
 
 - Ch14 Introducing Cucumber to Rails, and trying to create a simple test feature for the Rails app
 - Ch15 Using Capybara to test a Rails app
+    - Capybara has a built-in headless driver than can be used with pages without JS code
+    - using an after hook and save a screenshot if the test fails
 
 Rating /5
 
