@@ -1,16 +1,14 @@
 ---
 layout: post
 title: "Cucumber"
-date: 2015-01-01 22:22:22
+date: 2015-01-04 22:22:22
 categories: [books, reviews]
 tags: [books, reviews, 2015]
 ---
 The book even if it's targeted towards the Ruby crowd is as useful for the Ruby as well as for Ruby-derived frameworks, such as Lettuce for Python or Cucumber-java for well, you know...
 
 The first ten or so chapters have a really nice progress of testing and at a same time drafting an application that is of course focussed on Cucumber. Lots of tips as well as ways of working and avoiding common pitfalls are presented throughout the chapters.
-Also throughout the book you'll find not only useful Cucumber tailored techniques but also things which apply in a continuous integration environment. As the focus is also on the environment, you can find various Ruby frameworks which can be used for you daily tasks regarding the Cucumber framework.
-
-A couple worth mentioning would be ActiveRecord (working with databases), HTTParty/Sinatra (RESTful services), Capybara (AJAX pages), Database cleaner (consistent state of DB)
+Also throughout the book you'll find not only useful Cucumber tailored techniques but also things which apply in a continuous integration environment. As the focus is also on the environment, you can find various Ruby frameworks which can be used for you daily tasks regarding the Cucumber framework. A couple worth mentioning are ActiveRecord (working with databases), HTTParty/Sinatra (RESTful services), Capybara (AJAX pages), Database cleaner (consistent state of DB)
 
 Below you can find some "might-be-useful" ideas from the book:
 - Tags can be used to execute just certain scenarios
@@ -26,9 +24,9 @@ Below you can find some "might-be-useful" ideas from the book:
 - Other platforms: JS cucumber-js, Java cucumber-jvm, C# SpecFlow
     - Gherkin language is one component, if one wants to implement a Cucumber-compatible framework
     - Cucumber wire protocol is the other component, and it's well documented so it should be fairly easy to implement drivers
-- Ruby specific: bundler - a sort of Ruby package manager with auto-dependency, 
+- Ruby specific: bundler - a sort of Ruby package manager with auto-dependency,
 
-Rating /5
+Rating 4/5
 
 As usual, you can find the book on [Amazon] or [Goodreads], if you're looking for more information or a place to grab a copy.
 
