@@ -14,6 +14,9 @@ Below you can find some "might-be-useful" ideas from the book:
 - Tags can be used to execute just certain scenarios
 - Tagged hooks in order to run certain scenarios only on tagged steps
 
+- Ch14 Introducing Cucumber to Rails, and trying to create a simple test feature for the Rails app
+- Ch15 Using Capybara to test a Rails app
+
 Rating /5
 
 As usual, you can find the book on [Amazon] or [Goodreads], if you're looking for more information or a place to grab a copy.
