@@ -22,6 +22,11 @@ Below you can find some "might-be-useful" ideas from the book:
 - when working with existing systems:
     - start somewhere with a simple scenario, implement a bug report as a scenario
 - Approaches on handling various situation: databases, async calls, web applications
+- Aruba is a framework designed to test CLI apps; @announce tags can be used for extra logging
+- Other platforms: JS cucumber-js, Java cucumber-jvm, C# SpecFlow
+    - Gherkin language is one component, if one wants to implement a Cucumber-compatible framework
+    - Cucumber wire protocol is the other component, and it's well documented so it should be fairly easy to implement drivers
+- Ruby specific: bundler - a sort of Ruby package manager with auto-dependency, 
 
 Rating /5
 
