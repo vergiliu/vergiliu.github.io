@@ -1,5 +1,5 @@
 name: rants and reviews
-markdown: maruku
+markdown: kramdown
 pygments: true
 
 port: 8080

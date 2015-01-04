@@ -7,6 +7,7 @@ tags: [books, reviews, 2013]
 ---
 `Don't Make Me Think by Steve Krug`
 The "bible" of web usability in its second incarnation. A couple of ideas or take-aways from the book:
+
 + Make the site natural to the user and his actions
 + Build billboards not newspapers
 + Make stuff visible and easy to determine what's its function to the user
