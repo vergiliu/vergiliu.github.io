@@ -169,3 +169,8 @@ Learning Python 5th edition [nov2013-] (ebook)
 - method names surround by double underscores are special hooks
 - new-style classes available in Python3 have some built-in hooks available, but not the usual ones
 - `__str__`, `__repr__`, `__add__`
+    - str is usually used for user-friendly appearance
+    - repr is used for low-level display on object
+
+- The path feature which allows. Pth extension files, to define extra paths to search for modules
+- You can get current path setup with sys. Path
