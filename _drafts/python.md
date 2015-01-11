@@ -161,6 +161,9 @@ Learning Python 5th edition [nov2013-] (ebook)
 - by using triple quoted text blocks we can add comments parsed by the pydoc utility
 - sys.path can be changed and updated, but by accessing it directly, it's also easy to invalidate it
 - recursive module reload example
+- The path feature which allows. Pth extension files, to define extra paths to search for modules
+- You can get current path setup with sys. Path
+
 
 #####Chapter 26: OOP
 - multiple inheritance is possible
@@ -169,8 +172,13 @@ Learning Python 5th edition [nov2013-] (ebook)
 - method names surround by double underscores are special hooks
 - new-style classes available in Python3 have some built-in hooks available, but not the usual ones
 - `__str__`, `__repr__`, `__add__`
-    - str is usually used for user-friendly appearance
-    - repr is used for low-level display on object
-
-- The path feature which allows. Pth extension files, to define extra paths to search for modules
-- You can get current path setup with sys. Path
+    - str is usually used for user-friendly appearance and when calling print explicitly (i.e. print(Manager))
+    - repr is used for low-level display on object or when calling the object (i.e. Manager)
+- it is advised to use the explicit name of the super class (not _super_) when we customize a subclass
+- example with customizing Person class and Manager which in \_\_init\_\_ calls Person(job='manager')
+- prefixing a method name with double underscores \_\_method_name will make it pseudo-private, and it will also contain the class name making it unique when looking it up
+- pickle: serialize arbitrary python objects
+    - pickled classes must be importable
+- shelve module provides extra layer that allows storing of objects by key
+    - import shelve, open new shelve db = shelve.open('file') then we can call db[key] = object_name
+- ch29
