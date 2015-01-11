@@ -6,3 +6,9 @@
 The Dropbox example where a “how does it work” video became the MVP that went through the features - sync made easy - but at the same time the leap-of-faith was the assumption that similar products where too difficult to use.
 - Food on the table story - “concierge” approach - one customer initially interacted directly with the founder in order to get an insight in building the product.
 - Use the so called "Innovation accounting" for the startup as an accounting method
+
+
+Going over the Toyota manufacturing setup of small batches, introduced after ww2 when Japanese companies couldn't get hold of a lot of capital in order to compete with the us manufacturers. They were using small batches and same machines to produce different types of components also the production line can be easier interrupted if something went wrong or components had issues. Toyota became largest car manufacturer in weep 2008
+Large batch death spiral which incurs further penalties as the batches advance through the build process, and when even the slightest delays build up.
+Training new hires through a gradual developing cycle pays off in the end especially of looking at longer term costs/bugs/delays
+Use the 5 why's technique to get to the root cause of the problems.
