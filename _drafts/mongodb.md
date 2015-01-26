@@ -9,6 +9,7 @@ MongoDB course (M101P)
 
 Access (client):
 - db.<name>.insert({json_document})
+    - an _id will be created if it's missing
 - db.<name>.update( ... , {upsert: true}) - or upsert operation, update a document if it exists, otherwise create one
     - multi: true, otherwise mongo defaults to updating only one document in the collection
     - write operations are not isolated transactions, no guarantees for multi-documents updates, only single documents
@@ -34,7 +35,7 @@ Access (client):
     - i.e. cursor = things.find().skip(3).limit(1).sort('value',pymongo.DESCENDING)
 
 
-
+Week3: - schema design
 
 Python bottle:
 - bottle page templates .tpl are in a folder called views/
