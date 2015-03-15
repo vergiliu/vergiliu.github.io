@@ -15,8 +15,10 @@ I enjoyed the concept of WYSIATI (What You See Is All There Is) whereas you don'
 Many of the ideas introduced in the book are backed up by real-world examples or studies carried out by the author across decades of work, culminating his psychology career with a Nobel prize.
 
 I'll wrap up with a couple of educative quotes from the book:
-"The central fact of our existence is that time is the ultimate finite resource, but the remembering self ignores that reality."
-"As in many other choices that involve moderate or high probabilities, people tend to be risk averse in the domain of gains and risk seeking in the domain of losses."
+
+> "The central fact of our existence is that time is the ultimate finite resource, but the remembering self ignores that reality."
+
+> "As in many other choices that involve moderate or high probabilities, people tend to be risk averse in the domain of gains and risk seeking in the domain of losses."
 
 Rating 5/5
 
