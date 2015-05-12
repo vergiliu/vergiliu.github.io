@@ -182,3 +182,8 @@ Learning Python 5th edition [nov2013-] (ebook)
 - shelve module provides extra layer that allows storing of objects by key
     - import shelve, open new shelve db = shelve.open('file') then we can call db[key] = object_name
 - ch29
+
+#####Chapter 30: operator overloading
+- many operations can be overloaded, i.e. \_\_len/add/bool/lt/gt/iter\_\_
+- they always start and end with underscores; example for _getitem_ used for slicing; as an extra, getitem is also used by the for-loop
+- iterable objects: iter and next; end of iteration => `raise StopIteration` we have to take into account space and time considering the fact we can reuse an object or create new objects for iterable
