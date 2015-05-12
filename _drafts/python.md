@@ -129,7 +129,7 @@ Learning Python 5th edition [nov2013-] (ebook)
     - i.e. list(map(pow, [10,10,10], [2,3,4]))
     - selecting items in iterables - filtering - list(filter((lambda x: x>0), [3, 5, -1, 9, -9, -100]))
     - reduce - returning an element after scanning an iterable: reduce((lambda x, y: x * y), [1, 2, 3, 4]) => 24
-- list comprehension collect the result of applying an expression to an iterable, and return a list i.e. `res = [ord(x) for x in 'spam']
+- list comprehension collect the result of applying an expression to an iterable, and return a list i.e. `res = [ord(x) for x in 'spam']`
   - sometimes map or list comprehension are better suited for the task-at-hand, for simple scenarios, you can get either of them quite straightforward
   - as in Python3 file is iterable [line.rstrip() for line in open('file')] == list(map(lambda line: line.rstrip(), open('file')))
 - the _timeit_ module used for time length statistics of function calls, pystones
@@ -187,3 +187,4 @@ Learning Python 5th edition [nov2013-] (ebook)
 - many operations can be overloaded, i.e. \_\_len/add/bool/lt/gt/iter\_\_
 - they always start and end with underscores; example for _getitem_ used for slicing; as an extra, getitem is also used by the for-loop
 - iterable objects: iter and next; end of iteration => `raise StopIteration` we have to take into account space and time considering the fact we can reuse an object or create new objects for iterable
+- using yield (which automatically saves state, generator function) and *iter*
