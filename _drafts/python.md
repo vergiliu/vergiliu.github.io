@@ -4,7 +4,7 @@ title: "Python"
 date: 2015-12-31 22:22:22
 started_on: 2013-11-15
 categories: jekyll
-tags: books
+tags: books, 2015
 ---
 Learning Python 5th edition [nov2013-] (ebook)
 

@@ -9,7 +9,7 @@ tags: [books, reviews, 2015]
 
 I would gladly recommend this book to each and every one of us and it is by far an eye-opening book in understanding the ways our minds work and how so often it's influencing us for the worse in many of our decisions. Kahneman analyzes how the processes governing the though process can be considered split in 2 big parts, System 2 - the one reasoning and bringing to the table valid arguments and hypotheses and the other, System 1 a sort-of automatic system which is focussing solely on the moment at hand taking most of the times absurd decisions. He then goes on describing how on many occasions the automatic system takes precedence, and influences the logical reasoning behind our thoughts.
 
-I give this book extra good points for the fact that the chapters are relatively short and easy to follow, especially if you're
+I give this book extra good points for the fact that the chapters are relatively short and easy to follow, especially if you're reading this on short breaks or 15-20 minutes chunks :)
 I enjoyed the concept of WYSIATI (What You See Is All There Is) whereas you don't have enough information to say something about a particular thing or situation but your System 1 just makes up a story which fits to the given situation based on past experiences or associating it with similar events, and as you've guessed it by now it's most of the times way off. Similar fallacies are presented such as overconfidence, intensity matching and also the fact that our mind is playing tricks with us in matters involving probabilities even when the ones analyzing the problems presented are well acquainted with the theory and not just regular persons.
 
 Many of the ideas introduced in the book are backed up by real-world examples or studies carried out by the author across decades of work, culminating his psychology career with a Nobel prize.
@@ -24,5 +24,5 @@ Rating 5/5
 
 As usual, you can find the book on [Amazon] or [Goodreads], if you're looking for more information or a place to grab a copy.
 
-[Amazon]: http://www.amazon.com/  Toyota-Kata-Managing-Improvement-Adaptiveness/dp/0071635238
-[Goodreads]: https://www.goodreads.com/book/show/  9904353-toyota-kata
+[Amazon]: http://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555
+[Goodreads]: https://www.goodreads.com/book/show/14062004-thinking-fast-and-slow
