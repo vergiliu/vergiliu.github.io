@@ -183,8 +183,29 @@ Learning Python 5th edition [nov2013-] (ebook)
     - import shelve, open new shelve db = shelve.open('file') then we can call db[key] = object_name
 - ch29
 
-#####Chapter 30: operator overloading
+#####Chapter 30-31: operator overloading and oop techniques
 - many operations can be overloaded, i.e. \_\_len/add/bool/lt/gt/iter\_\_
-- they always start and end with underscores; example for _getitem_ used for slicing; as an extra, getitem is also used by the for-loop
+- they always start and end with underscores; example for _getitem_ used for slicing; as an extra, getitem is also used by the for-loop, so iteration, indexing and slicing
 - iterable objects: iter and next; end of iteration => `raise StopIteration` we have to take into account space and time considering the fact we can reuse an object or create new objects for iterable
 - using yield (which automatically saves state, generator function) and *iter*
+- \_\_getattr\_\_ to access attributes of the class or `raise AttributeError(missing)` otherwise
+- string representation of the object using repr or str - called automatically when instances are converted to strings
+    - in case one is defined, the other remains as an extra representation
+    - both must return strings
+- add/radd/iadd for addition, right-addition and in-place, usually not all need to be implemented
+- calling using \_\_call\_\_ allows to code objects that conform to functions, useful for API
+- py3 specific: lt/gt, in py2 there's a generic cmp overload operator available
+- bool/len - any object in Python can be True/False, python tries to infer the boolean value from len
+- \_\_del\_\_ is called at gc time, not used in Python
+- name mangling: all \_\_attribute in a class will get converted to \_Class\_\_attribute as pseudo-private attributes, in order to differentiate between different classes with same attributes
+- unbound methods can be without using the class' instance (no _self_), only works in py3
+- mix-in class example
+
+> def __attrnames(self):
+>  result = ""
+>  for attr in sorted(self.__dict__): result += "\t%s=%s\n" % (attr,self.__dict__[attr])
+>     return result
+> def __str__(self):
+>    return 'Instance of %s, address %s: %s' % (self.__class__.__name__,id(self),self.__attrnames())
+
+#####ch 32: advanced class topics
