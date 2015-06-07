@@ -183,7 +183,7 @@ Learning Python 5th edition [nov2013-] (ebook)
     - import shelve, open new shelve db = shelve.open('file') then we can call db[key] = object_name
 - ch29
 
-#####Chapter 30-31: operator overloading and oop techniques
+##### Chapter 30-31: operator overloading and oop techniques
 - many operations can be overloaded, i.e. \_\_len/add/bool/lt/gt/iter\_\_
 - they always start and end with underscores; example for _getitem_ used for slicing; as an extra, getitem is also used by the for-loop, so iteration, indexing and slicing
 - iterable objects: iter and next; end of iteration => `raise StopIteration` we have to take into account space and time considering the fact we can reuse an object or create new objects for iterable
@@ -201,11 +201,39 @@ Learning Python 5th edition [nov2013-] (ebook)
 - unbound methods can be without using the class' instance (no _self_), only works in py3
 - mix-in class example
 
-> def __attrnames(self):
->  result = ""
->  for attr in sorted(self.__dict__): result += "\t%s=%s\n" % (attr,self.__dict__[attr])
->     return result
-> def __str__(self):
->    return 'Instance of %s, address %s: %s' % (self.__class__.__name__,id(self),self.__attrnames())
+> def __attrnames(self): <br>
+>  result = "" <br>
+>  for attr in sorted(self.__dict__): <br>
+>     result += "\t%s=%s\n" % (attr,self.__dict__[attr]) <br>
+>     return result <br>
+> def __str__(self): <br>
+>    return "Instance of %s, address %s: %s" %  (self.__class__.__name__,id(self),self.__attrnames())
 
-#####ch 32: advanced class topics
+##### ch 32: advanced class topics
+- new style classes
+    - classes and types are merged
+    - object serves as root for all classes
+    - diamond/MRO search for inheritance instead of DFLR, applies to multi-inheritance
+    - proxy classes much more difficult to build and manage
+- MRO algo and some examples :))
+- \_\_slots\_\_ = array of ivars that need to be assigned before they can be used, and no other ivars can be used
+    - optimization mechanism mostly, "best reserved for special cases"
+    - special case using \_\_dict\_\_ as a slot ivar
+- Properties
+    - intercept access and compute variables arbitrarily
+    - require new style classes to be used
+
+> class P(): <br>
+>   def getage(self): return 22 <br>
+>   def setage(self, new_age): self._age = new_age <br>
+>   age = property(getage, setage, None, None) <br>
+
+- static methods - py3 allows for methods which don't require a class to be called
+    - explicit defining of class or instance method def A():pass A = classmethod/staticmethod(A)
+- function and class decorations
+    - extra logic/functionality to functions or classes, they can also be manage later calls to function/classes
+- custom decorators are possible for functions/classes and will act as a proxy caller
+- super
+    - difficult to really grasp, used in MRO, and not widely agreed as best approach, so better to stay away from it unless you really understand what's it that you're doing
+    - as soon as multiple inheritance is involved, super usage might become problematic as it's very complex and require all classes to adhere to same calling ways
+    - the quote though is really spot on "If the implementation is hard to explain, it's a bad idea"
