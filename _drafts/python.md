@@ -8,6 +8,9 @@ tags: books, 2015
 ---
 Learning Python 5th edition [nov2013-] (ebook)
 
+I'll start by saying this is a massive book, covering so many things that's hard to go through it cover-to-cover without forgetting or missing out on stuff.
+Overall the book is excellent but we always need to keep in mind it's "the book over Python" so no matter how big it is, it will always skimp on something.
+
 #####Chapter1-4
 - basic intro, running scripts, exec, open, reload
 - basic data types
@@ -201,13 +204,13 @@ Learning Python 5th edition [nov2013-] (ebook)
 - unbound methods can be without using the class' instance (no _self_), only works in py3
 - mix-in class example
 
-> def __attrnames(self): <br>
+> def \_\_attrnames(self): <br>
 >  result = "" <br>
->  for attr in sorted(self.__dict__): <br>
->     result += "\t%s=%s\n" % (attr,self.__dict__[attr]) <br>
+>  for attr in sorted(self.\_\_dict\_\_): <br>
+>     result += "\t%s=%s\n" % (attr,self.\_\_dict\_\_[attr]) <br>
 >     return result <br>
-> def __str__(self): <br>
->    return "Instance of %s, address %s: %s" %  (self.__class__.__name__,id(self),self.__attrnames())
+> def \_\_str\_\_(self): <br>
+>    return "Instance of %s, address %s: %s" %  (self.\_\_class\_\_.\_\_name\_\_,id(self),self.\_\_attrnames())
 
 ##### ch 32: advanced class topics
 - new style classes
@@ -225,7 +228,7 @@ Learning Python 5th edition [nov2013-] (ebook)
 
 > class P(): <br>
 >   def getage(self): return 22 <br>
->   def setage(self, new_age): self._age = new_age <br>
+>   def setage(self, new_age): self.\_age = new_age <br>
 >   age = property(getage, setage, None, None) <br>
 
 - static methods - py3 allows for methods which don't require a class to be called
@@ -237,3 +240,18 @@ Learning Python 5th edition [nov2013-] (ebook)
     - difficult to really grasp, used in MRO, and not widely agreed as best approach, so better to stay away from it unless you really understand what's it that you're doing
     - as soon as multiple inheritance is involved, super usage might become problematic as it's very complex and require all classes to adhere to same calling ways
     - the quote though is really spot on "If the implementation is hard to explain, it's a bad idea"
+
+##### Exceptions (ch 34 & ch 35 & ch 36)
++ _finally_ code blocks are always executed
++ _else_ from try/except/else is executed only if no exception were raised during the try/except code block
++ _except_ can be empty, and then we catch all exceptions or we can specify 1 (except NameError) or more (except (A, B)) exceptions encountered
++ assert used for trapping user errors and not programming errors
++ _with_ EXPRESSION _as_ VARIABLE
+    + EXPRESSION might run startup and cleanup code, context manager objects which need to implement \_\_enter\_\_ and exit methods
+    + multiple context managers can be nested in newer versions
++ exceptions are class-derived only in current versions
++ try to create a class hierarchy for exceptions like Overall(Exception) Specific1(Overall) Specific2(Overall)
+    - this way you can easily add or update exceptions
+    - easy to catch exceptions by people using the code
+    - to add more custom text we can implement repr or str
+    - not all exceptions are errors, we can use an exception to exit from multiple loops
