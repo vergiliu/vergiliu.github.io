@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Generic"
+date: 2015-12-31 22:22:22
+categories: [books, reviews]
+tags: [books, reviews, 2015]
+---
 Algorithms (Part I) - Princeton
 
 - shuffle: swap i and r, where r is a random between 0 and length(array)

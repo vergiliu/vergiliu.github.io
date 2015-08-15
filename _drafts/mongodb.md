@@ -1,3 +1,10 @@
+---
+layout: post
+title: "MongoDB"
+date: 2015-12-31 22:22:22
+categories: [books, reviews]
+tags: [books, reviews, 2015]
+---
 MongoDB course (M101P)
 - schemaless, document-oriented
 - no joins, no transactions

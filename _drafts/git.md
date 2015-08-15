@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Git"
+date: 2015-12-31 22:22:22
+categories: [books, reviews]
+tags: [books, reviews, 2015]
+---
 Local git commands:
 - git branch newBranchName
 - git checkout moveToThisBranch

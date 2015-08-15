@@ -1,8 +1,10 @@
-name: rants and reviews
-markdown: kramdown
-pygments: true
-
-port: 8080
+title: rants and reviews
+description: rants and reviews
+rouge: true
 
 author:
     name: vergiliu
+
+# build settings
+markdown: kramdown
+port: 8080

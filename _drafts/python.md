@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "Python"
+title: "Learning Python"
 date: 2015-12-31 22:22:22
 started_on: 2013-11-15
 categories: jekyll
 tags: books, 2015
 ---
-Learning Python 5th edition [nov2013-] (ebook)
+Learning Python 5th edition (ebook)
 
 I'll start by saying this is a massive book, covering so many things that's hard to go through it cover-to-cover without forgetting or missing out on stuff.
 Overall the book is excellent but we always need to keep in mind it's "the book over Python" so no matter how big it is, it will always skimp on something.
 
-#####Chapter1-4
+#### Chapter1-4
 - basic intro, running scripts, exec, open, reload
 - basic data types
 - immutability (strings, numbers, tuples)
@@ -20,7 +20,7 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
 - lists and list comprehension
 - tuples immutable (see as read-only)
 
-#####Chapter 5
+#### Chapter 5
 - floor division //
 - '{} or {0} string'.format()
 - random.random, random.randint(a, b), random.choice(['a', 'b', 'c']), random.shuffle)
@@ -31,14 +31,14 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
 - can contain only immutable/hashable elements
 - frozensets can contain any type of object
 
-#####Chapter 6
+#### Chapter 6
 - types live with objects not variables
 - everything is garbage collected using reference counting, at the point when there are no references
 - as variables might point to the same object, changing the object in-place (only for mutable objects), might affect more variables **always use X.copy()**
   - use copy or deepcopy from the copy module to achieve this
 - testing for same object *A is B*, also one can use sys.getrefcount(A) to see references to this object
 
-#####Chapter 7 - Strings
+#### Chapter 7 - Strings
 - encode decode format() r'rawstrings' b'bytestrings' u'unicode\u022'
 - triple quotes or block strings used for comments or multi-line strings
 - we can test for string_a in string_b
@@ -49,24 +49,24 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
   - 'My %(kind)s runs %(platform)s' % dict(kind='laptop', platform=sys.platform)
 - int() chr() ord() for int/char/string conversion
 
-#####Chapter 8 - Lists and dictionaries
- - lists: mutable, sub-nesting, accessed by offset, heterogeneous
- - list comprehension [c*2 for c in 'MONKEY']
-     - map does a similar thing, applying a function to a list(map(abs, [-1, -2, 1, 2, 3]))
- - slice assignment a_list[0:2] = ['one', 'two']
-     - [1, 2, 'spam'].sort() fails in python3 but works in 2.x
- - extends adds many elements, append only one
- - del(x[element]) deletes one or more elements
- - dictionaries: accessed by key, mutable, heterogenous, variable length
-    - for key in Dict | (key, value) in Dict.items()
-    - any immutable (object) can be a key in a dictionary
-    - dict(zip(keys, values)) to quickly create a dictionary
-    - has_key is deprecated in python3, use _**in**_ instead
-    - dictionary comprehension {k: v for (k,v) in zip([1,2], ['a', 'b'])} or  Dict = {k: None for k in 'spam'}
-    - items, keys and values() are now views and not elements
- - _can be sorted using **sorted(Iterable)**, which works for more any iterable_
+#### Chapter 8 - Lists and dictionaries
+- lists: mutable, sub-nesting, accessed by offset, heterogeneous
+- list comprehension [c*2 for c in 'MONKEY']
+    - map does a similar thing, applying a function to a list(map(abs, [-1, -2, 1, 2, 3]))
+- slice assignment a_list[0:2] = ['one', 'two']
+    - [1, 2, 'spam'].sort() fails in python3 but works in 2.x
+- extends adds many elements, append only one
+- del(x[element]) deletes one or more elements
+- dictionaries: accessed by key, mutable, heterogenous, variable length
+- for key in Dict | (key, value) in Dict.items()
+- any immutable (object) can be a key in a dictionary
+- dict(zip(keys, values)) to quickly create a dictionary
+- has_key is deprecated in python3, use _**in**_ instead
+- dictionary comprehension {k: v for (k,v) in zip([1,2], ['a', 'b'])} or  Dict = {k: None for k in 'spam'}
+- items, keys and values() are now views and not elements
+- _can be sorted using **sorted(Iterable)**, which works for more any iterable_
 
-#####Chapter 9 - tuples, files, ...
+#### Chapter 9 - tuples, files, ...
 - tuple: ordered collections of elements, immutable, accessed by offset, can be seen as arrays of object references
     - the objects contained in tuples can be changed
     - namedtuples in collections module:
@@ -80,21 +80,21 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
 - elements inside objects can be referneced by other objects so we need to be careful to work with copies if we need not to alter the originals, use slicing copy()/deepcopy() or create new objects
 - we should not check for type(object) as it limits functionality
 
-#####Chapter 10-13
- - intro to indentation and some pythonic rules :)
- - try: except: clause
- - **print([object, ...][, sep=' '][, end='\n'][, file=sys.stdout][, flush=False])** for python3
- - stream redirection (stdout, stderr), easiest is through assignment sys.stdout = open('file', 'w')
- - ellipsis can be used instead of pass **def to_be_implemented(): ...**
-     - valid only in python3
- - 2 or 3, 3 or 2, 2 and 3, 2 and []
- - ternary expression Z = A if Condition else B
- - while conditions: (...) else: (...) _# if no break was encountered_
- - for _target_ in _object_: (...) else: (...) _# if no break was encountered_
- - zip() or map(); keys = [], values = [] => **`D = dict(zip(keys, values))`**
- - for (off, item) in enumerate('iterable'): ...
+#### Chapter 10-13
+- intro to indentation and some pythonic rules :)
+- try: except: clause
+- **print([object, ...][, sep=' '][, end='\n'][, file=sys.stdout][, flush=False])** for python3
+- stream redirection (stdout, stderr), easiest is through assignment sys.stdout = open('file', 'w')
+- ellipsis can be used instead of pass **def to_be_implemented(): ...**
+- valid only in python3
+- 2 or 3, 3 or 2, 2 and 3, 2 and []
+- ternary expression Z = A if Condition else B
+- while conditions: (...) else: (...) _# if no break was encountered_
+- for _target_ in _object_: (...) else: (...) _# if no break was encountered_
+- zip() or map(); keys = [], values = [] => **`D = dict(zip(keys, values))`**
+- for (off, item) in enumerate('iterable'): ...
 
-#####Chapter 14-17 - Iterators, Scope, ...
+####Chapter 14-17 - Iterators, Scope, ...
 - iterator, any object which exposes \_\_next\_\_() and raises StopIteration at end of results
     - iterator object (\_\_next\_\_) or iterable object(\_\_iter\_\_)
     - files have their own iterators
@@ -115,7 +115,7 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
 - factory functions / closures ; lambda's
 - nonlocal - a name that can be changed in an enclosing scope
 
-#####Chapter 18 - Arguments
+####Chapter 18 - Arguments
 - positional arguments matched from left to right
 - keywords matched using the parameters names
 - use \* or \*\* varargs to match any number of parameters as tuples (positional) or dictionaries (keyword)
@@ -137,7 +137,7 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
   - as in Python3 file is iterable [line.rstrip() for line in open('file')] == list(map(lambda line: line.rstrip(), open('file')))
 - the _timeit_ module used for time length statistics of function calls, pystones
 
-#####Chapter 22-25 - Modules/Packages/Advanced Modules
+####Chapter 22-25 - Modules/Packages/Advanced Modules
 - modules are imported only once per session, so in interactive mode you need to use `reload` instead of just calling import again
 - we can use .pth files to define other paths where Python can search for modules
 - prefer `import` over `from`, when working with modules but no strong preference is given to import
@@ -167,8 +167,7 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
 - The path feature which allows. Pth extension files, to define extra paths to search for modules
 - You can get current path setup with sys. Path
 
-
-#####Chapter 26: OOP
+####Chapter 26: OOP
 - multiple inheritance is possible
 - referring to current object (`this` - equivalent) is done by using the `self` keyword
 - \_\_init\_\_ method used as a constructor, class name(inherit_1, inherit_2) using LtR order of precedence
@@ -186,7 +185,7 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
     - import shelve, open new shelve db = shelve.open('file') then we can call db[key] = object_name
 - ch29
 
-##### Chapter 30-31: operator overloading and oop techniques
+#### Chapter 30-31: operator overloading and oop techniques
 - many operations can be overloaded, i.e. \_\_len/add/bool/lt/gt/iter\_\_
 - they always start and end with underscores; example for _getitem_ used for slicing; as an extra, getitem is also used by the for-loop, so iteration, indexing and slicing
 - iterable objects: iter and next; end of iteration => `raise StopIteration` we have to take into account space and time considering the fact we can reuse an object or create new objects for iterable
@@ -203,16 +202,17 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
 - name mangling: all \_\_attribute in a class will get converted to \_Class\_\_attribute as pseudo-private attributes, in order to differentiate between different classes with same attributes
 - unbound methods can be without using the class' instance (no _self_), only works in py3
 - mix-in class example
+{% highlight ruby %}
+def \_\_attrnames(self): <br>
+ result = "" <br>
+ for attr in sorted(self.\_\_dict\_\_): <br>
+ result += "\t%s=%s\n" % (attr,self.\_\_dict\_\_[attr]) <br>
+ return result <br>
+def \_\_str\_\_(self): <br>
+return "Instance of %s, address %s: %s" %  (self.\_\_class\_\_.\_\_name\_\_,id(self),self.\_\_attrnames())
+{% endhighlight %}
 
-> def \_\_attrnames(self): <br>
->  result = "" <br>
->  for attr in sorted(self.\_\_dict\_\_): <br>
->     result += "\t%s=%s\n" % (attr,self.\_\_dict\_\_[attr]) <br>
->     return result <br>
-> def \_\_str\_\_(self): <br>
->    return "Instance of %s, address %s: %s" %  (self.\_\_class\_\_.\_\_name\_\_,id(self),self.\_\_attrnames())
-
-##### ch 32: advanced class topics
+#### ch 32: advanced class topics
 - new style classes
     - classes and types are merged
     - object serves as root for all classes
@@ -225,12 +225,12 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
 - Properties
     - intercept access and compute variables arbitrarily
     - require new style classes to be used
-
-> class P(): <br>
->   def getage(self): return 22 <br>
->   def setage(self, new_age): self.\_age = new_age <br>
->   age = property(getage, setage, None, None) <br>
-
+{% highlight ruby %}
+class P():
+   def getage(self): return 22
+   def setage(self, new_age): self.\_age = new_age
+   age = property(getage, setage, None, None)
+{% endhighlight %}
 - static methods - py3 allows for methods which don't require a class to be called
     - explicit defining of class or instance method def A():pass A = classmethod/staticmethod(A)
 - function and class decorations
@@ -255,3 +255,57 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
     - easy to catch exceptions by people using the code
     - to add more custom text we can implement repr or str
     - not all exceptions are errors, we can use an exception to exit from multiple loops
++ to continue to run after exceptions encountered
+{% highlight python %}
+try:
+    ...run program...
+except:                         # All uncaught exceptions come here
+    import sys
+    print('uncaught!', sys.exc_info()[0], sys.exc_info()[1])
+{% endhighlight %}
++ operations that fail should be wrapped in try statements
++ the profile module can be used to determine bottleneck points in the program
+
+#### Unicode and bytestrings - ch 37
++ encondings / help(encodings) should give some initial details
+    - bytes immutable, bytesarray mutable
+        - bytes doesn't support format or % to print text
+    - while working with files using 'b' binary when opening the file, sets also the data type read
+    - py3: str.encode() and bytes.decode() to switch between str and bytes
+    - chr/ord to convert chars to int and back
+    - String . encode/decode('character_encoding'), can be handled automatically when opening file
+        - open(..., encoding='latin-1')
+
+#### Managed attributes - ch 38
+- property: something = property(getterFunc, setterFunc, deleteFunc, 'doc style info')
+    - decorators
+{% highlight ruby %}
+@property
+def address(self): return self._address
+@address.setter
+@def address(self, value): self._address = value
+{% endhighlight %}
+
+- descriptors provide an alternative way to intercept attributes access
+    - it allows to route a specific attribute operation to a methods from a different class
+
+#### Decorators - ch 39
+- rebinding of methods and classes to other callables
+    - e.g. tracing function calls
+
+{% highlight python %}
+class tracer:
+    def __init__(self, func):
+        self.calls = 0
+        self.func = func
+    def __call__(self, *args):  # On @ decoration: save original func
+        self.calls += 1         # On later calls: run original func
+        print('call %s to %s' % (self.calls, self.func.__name__))
+        self.func(*args)
+        #[...]
+@tracer
+def spam(a, b, c):
+print(a + b + c)         # spam = tracer(spam) # Wraps spam in a decorator object
+{% endhighlight %}
+
+#### Metaclasses - ch 40
