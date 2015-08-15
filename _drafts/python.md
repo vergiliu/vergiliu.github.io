@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Learning Python"
-date: 2015-12-31 22:22:22
+date: 2015-08-15 22:22:22
 started_on: 2013-11-15
-categories: jekyll
-tags: books, 2015
+categories: [4stars, books, reviews, 2015]
+tags: [books, reviews, 2015]
 ---
 Learning Python 5th edition (ebook)
 

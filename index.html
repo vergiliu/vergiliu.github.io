@@ -6,20 +6,20 @@ title: rants and reviews
 <div id="home">
   <h1>Posts</h1>
   <ul class="posts">
+  <dl class="dl-horizontal">
+
     {% for post in site.posts %}
-        <li>
-            <span>{{ post.date | date_to_string }}</span> &raquo;
-
-            <a href="{{ post.url }}">{{ post.title }}</a>
-
-            {% for tag in post.tags %}
-                <span class="btn-xs btn-info">{{ tag }}</span>
-            {% endfor %}
-        </li>
+    <dt>
+        <span>{{ post.date | date_to_string }}</span>
+    </dt>
+    <dd>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <span style="padding:20px;">
+        {% for tag in post.tags %}
+            <span class="btn-xs btn-info">{{ tag }}</span>
+        {% endfor %}
+        </span>
+    </dd>
     {% endfor %}
   </ul>
-</div>
-
-<div style="position:absolute; top: 100px; right: 50px;">
-<a href="http://oreilly.com/bloggers/"><img alt="I review for the O'Reilly Reader Review Program" src="http://cdn.oreillystatic.com/bloggers/blogger-review-badge-125.png" border="0" width="125" height="125"></a>
 </div>
