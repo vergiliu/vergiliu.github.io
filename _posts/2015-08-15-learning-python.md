@@ -6,10 +6,12 @@ started_on: 2013-11-15
 categories: [4stars, books, reviews, 2015]
 tags: [books, reviews, 2015]
 ---
-Learning Python 5th edition (ebook)
+`Learning Python 5th edition (ebook) by David Ascher and Mark Lutz`
 
 I'll start by saying this is a massive book, covering so many things that's hard to go through it cover-to-cover without forgetting or missing out on stuff.
 Overall the book is excellent but we always need to keep in mind it's "the book over Python" so no matter how big it is, it will always skimp on something.
+
+Rating 4/5
 
 #### Chapter1-4
 - basic intro, running scripts, exec, open, reload
@@ -203,13 +205,13 @@ Overall the book is excellent but we always need to keep in mind it's "the book 
 - unbound methods can be without using the class' instance (no _self_), only works in py3
 - mix-in class example
 {% highlight ruby %}
-def \_\_attrnames(self): <br>
- result = "" <br>
- for attr in sorted(self.\_\_dict\_\_): <br>
- result += "\t%s=%s\n" % (attr,self.\_\_dict\_\_[attr]) <br>
- return result <br>
-def \_\_str\_\_(self): <br>
-return "Instance of %s, address %s: %s" %  (self.\_\_class\_\_.\_\_name\_\_,id(self),self.\_\_attrnames())
+def __attrnames(self):
+ result = ""
+ for attr in sorted(self.__dict__):
+    result += "\t%s=%s\n" % (attr,self.__dict__[attr])
+ return result
+def __str__(self):
+    return "Instance of %s, address %s: %s" %  (self.__class__.__name__,id(self),self.__attrnames())
 {% endhighlight %}
 
 #### ch 32: advanced class topics
@@ -228,7 +230,7 @@ return "Instance of %s, address %s: %s" %  (self.\_\_class\_\_.\_\_name\_\_,id(s
 {% highlight ruby %}
 class P():
    def getage(self): return 22
-   def setage(self, new_age): self.\_age = new_age
+   def setage(self, new_age): self._age = new_age
    age = property(getage, setage, None, None)
 {% endhighlight %}
 - static methods - py3 allows for methods which don't require a class to be called
@@ -258,7 +260,7 @@ class P():
 + to continue to run after exceptions encountered
 {% highlight python %}
 try:
-    ...run program...
+    # ...run program...
 except:                         # All uncaught exceptions come here
     import sys
     print('uncaught!', sys.exc_info()[0], sys.exc_info()[1])
@@ -281,9 +283,11 @@ except:                         # All uncaught exceptions come here
     - decorators
 {% highlight ruby %}
 @property
-def address(self): return self._address
+def address(self):
+    return self._address
 @address.setter
-@def address(self, value): self._address = value
+@def address(self, value):
+    self._address = value
 {% endhighlight %}
 
 - descriptors provide an alternative way to intercept attributes access
