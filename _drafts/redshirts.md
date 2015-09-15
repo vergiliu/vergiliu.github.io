@@ -1,16 +1,25 @@
 ---
 layout: post
 title: "Redshirts"
-date: 2015-12-31 23:45:00
+date: 2015-09-02 23:45:00
 categories: [books, reviews]
 tags: [books, reviews, 2015]
+rating: 3
 ---
 
 `Redshirts by John Scalzi`
 
-Taking a untested path in scifi writing Scalzi is going wild in this short novel about... space, and TV-series?!?
-What I would say is unexpected is that the faith of the characters seems to be dictated by some alien forces, which ironically in this case are an old fiction TV series.
-Lots of references to Star Trek and the first science based series and a lot of fun to read, even though it falls short of being a great fiction book.
-I would still recommend it, nonetheless, for the easy and short read and overall funny writing style.
+Taking an untested path in scifi writing (because you know, everyone's a critic) Scalzi is going wild in this short novel about... space, and TV-series?!?
+What I would say that I found surprising is that the faith of the characters seems to be dictated by some alien forces, which ironically in this case seem to be something straight out of Hollywood.
+Lots of references to Star Trek and the first science based TV series aired and a lot of fun to read, even though it falls short of being a great fiction book.
+I would nonetheless recommend it, for the easy and short read and overall funny writing style.
 
 Rating 3/5
+
+
+| Apple iTunes | [A] |
+| Google Play  |  |
+| Goodreads    |  |
+| Amazon       |  |
+
+[A]: https://itunes.apple.com/us/book/redshirts/id501758516?mt=11

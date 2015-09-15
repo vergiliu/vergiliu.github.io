@@ -1,9 +1,24 @@
 ---
 layout: post
 title: "Javascript"
-date: 2015-12-31 23:45:00
+date: 2015-09-03 11:11:11
 categories: [books, reviews]
 tags: [books, reviews]
+rating: 4
 ---
 
-`Javascript by Douglas Crockford`
+`Javascript The Good Parts by Douglas Crockford`
+
+The good parts of javascript gives you just that, a short language intro, a couple of best practices and unexpectedly some in depth details about why some parts are bad, like big arrays where everything seems to be a string causing slowness, or no scoping of variables so it looks like global rules. Besides that, at the end you get some bad parts as well. Also, also always use !== and === and not their lesser cousins and try to avoid the unary addition operators ++, \-\-.
+Overall a good little book with lots of information for starters and not only them
+
+| Digital store   | Reviews & dead trees |
+| [Apple iTunes]  | [Goodreads]          |
+| [Google Play]   | [Amazon]             |
+
+
+
+[Apple iTunes]: https://itunes.apple.com/us/book/javascript-the-good-parts/id394761311]
+[Google Play]: https://play.google.com/store/books/details/Douglas_Crockford_JavaScript_The_Good_Parts?id=PXa2bby0oQ0C
+[Goodreads]: https://www.goodreads.com/book/show/2998152-javascript
+[Amazon]: http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742

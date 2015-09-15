@@ -7,6 +7,17 @@ tags: [books, reviews, 2015]
 ---
 Algorithms (Part I) - Princeton
 
+CH1 Union Find
+
+CH2 Stacks, Queues, Bags
+- loitering - references to objects that are no longer used
+- stack implmented as array
+    - resizing array at 1/4 and 1/2 full
+    - constant amortized time overall
+- queues - linked list and array implementation
+- generics
+
+CH N
 - shuffle: swap i and r, where r is a random between 0 and length(array)
 - stable sort: insertion sort and merge sort
 - not-stable sort: quicksort, selection sort and shell sort - long distance exchanges of elements (keys) with equal values

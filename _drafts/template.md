@@ -23,3 +23,9 @@ Rating 5/5
 
 [jekyll-gh]: https://github.com/mojombo/jekyll
 [jekyll]: http://jekyllrb.com
+
+
+| Apple iTunes |  |
+| Google Play  |  |
+| Goodreads    |  |
+| Amazon       |  |
