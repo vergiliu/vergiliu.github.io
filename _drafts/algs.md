@@ -15,7 +15,32 @@ CH2 Stacks, Queues, Bags
     - resizing array at 1/4 and 1/2 full
     - constant amortized time overall
 - queues - linked list and array implementation
-- generics
+- generics - used for linked list - Stack<Integer> s = new Stack<Integer>();
+- make stack implementation Iterable
+- sorting
+    - Java using a callback by implementing a Comparable interface
+    - selection sort
+        - find smallest, swap w/ I, increment I => N*N/2 compares
+    - insertion sort
+        - compare 2 elements
+        - everything to the left of the current element is swapped until smaller than left element => N*N/4 compares
+        - linear time for partially sorted arrays
+    - shell sort
+        - h-interleaved sorting, good approach for 3x + 1 increments => N ^ 3/2
+        - last sort is basically 1-interleaved which is in fact insertion sort
+    - shuffle swap
+        - knuth shuffle swap I and random number < I
+    - convex hull = smallest area that encloses the points
+        - Graham scan
+
+CH3
+- Merge sort
+    - copy initial array (can be optimizeds), then each compare each half array and put smallest element in initial array, by incrementing either i (index in 1st half) or j (index in the 2nd half)
+    - N log_2 N
+    - uses 2 x N memory
+    - too complicated for small arrays
+- Quick sort
+
 
 CH N
 - shuffle: swap i and r, where r is a random between 0 and length(array)
