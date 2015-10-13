@@ -83,14 +83,28 @@ Week 4 - Priority Queues
 - symbol tables
     - in simple implementation (ibnary search, array) linear operations for insert
     - we can create an ordered Symbol Table by adding Comparable (Key Comparable<Key>)
-
-Week 5
+- BST (Binary Search Tree)
+    - binary tree in symmetric order
+    - tree shape depends on order of insertion
+        - if random distinct keys are inserted then number of compares is 2 log N (ln)
+    - search and insert are linearithmic 1.39 log N
+    - inorder traversal gives us keys in ascending order
+    - Hibbard deletion - special if it has 2 nodes, replace with minimum from right subtree
+        - after lots of deletions, tree becomes less balanced
+        - sqrt(N) for deletions
     - Binary Search Tree  (BST) - explicit implementation as tree: key, value, reference to left / right sub-tree - smaller/greater
-        - search and insert are 1.39 lg N for BST in average case, and N in worst case
-        - deletion takes sqrt(N)
-    - Balanced Search Tree
-        - (2-3 tree): tree can have either 2 or 3 leaves and node can have 1 or 2 keys, with middle leaf key value being between the the 2 keys
-            - all operations are c * lg N, constant time - c, depends on implementation
+            - search and insert are 1.39 lg N for BST in average case, and N in worst case
+            - deletion takes sqrt(N)
+Week 5
+    - 2-3 trees
+        - (2-3 tree): tree can have either 2 or 3 leaves and node can have 1 or 2 keys,
+            - with middle leaf key value being between the the 2 keys
+            - insertion we temporarily create 4 leaves/3 nodes node for which the middle element goes up the tree
+                - there might be cases when height increases if top node is already a 3 node
+            - all transformations maintain symmetry and perfect balance
+            - 18-30 max height for billions of nodes
+            - all operations are c * log N, constant time - c, depends on implementation (c lg N, so base 2)
+    - Red Black BST
     - LLRB - Left Leaning Red-Black BST
         - search works the same as in the BST
         - rotate left operations to move a right-leaning RED link and make it lean left
@@ -98,7 +112,11 @@ Week 5
         - search/insert/delete 2* lg N, max height 2 * lg N
     - B-tree
         - generalized version of 2-3 tree
-        - Java: TreeMap and TreeSet are implemented using RedBlack-tree
+        - allow up to M-1 keys per node
+        - when node is full we split it
+        - at most log M/2 N for search 
+    - Java: TreeMap and TreeSet are implemented using RedBlack-tree
+    - in databases, filesystems B trees
 - Hash Tables
     - each type of data depends on type of data
     - hashCode returns 32bit int, equal() and hashCode() should be equal
