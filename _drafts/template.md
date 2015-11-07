@@ -20,12 +20,12 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 
 Rating 5/5
 
+| Apple      | [iTunes] |
+| Google     | [Play Store] |
+| Goodreads  | [Goodreads] |
+| Amazon     | [Books] |
 
-[jekyll-gh]: https://github.com/mojombo/jekyll
-[jekyll]: http://jekyllrb.com
-
-
-| Apple iTunes |  |
-| Google Play  |  |
-| Goodreads    |  |
-| Amazon       |  |
+[iTunes]: https://itunes.apple.com/us/book/wool/id474997771?mt=11
+[Goodreads]: https://www.goodreads.com/book/show/12287209-wool
+[Play Store]: https://play.google.com/store/books/details/Hugh_Howey_Wool?id=HyBEprQjQgcC&hl=en
+[Books]: http://www.amazon.com/Wool-Omnibus-Edition-Silo-ebook/dp/B0071XO8RA
