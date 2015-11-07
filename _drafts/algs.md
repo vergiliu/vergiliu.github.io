@@ -95,7 +95,7 @@ Week 4 - Priority Queues
     - Binary Search Tree  (BST) - explicit implementation as tree: key, value, reference to left / right sub-tree - smaller/greater
             - search and insert are 1.39 lg N for BST in average case, and N in worst case
             - deletion takes sqrt(N)
-Week 5
+Week 5 - Balanced Sort Trees
     - 2-3 trees
         - (2-3 tree): tree can have either 2 or 3 leaves and node can have 1 or 2 keys,
             - with middle leaf key value being between the the 2 keys
@@ -114,7 +114,7 @@ Week 5
         - generalized version of 2-3 tree
         - allow up to M-1 keys per node
         - when node is full we split it
-        - at most log M/2 N for search 
+        - at most log M/2 N for search
     - Java: TreeMap and TreeSet are implemented using RedBlack-tree
     - in databases, filesystems B trees
 - Hash Tables
