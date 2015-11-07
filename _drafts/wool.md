@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Wool Omnibus"
-date: 2015-09-28 22:22:22
+date: 2015-10-28 22:22:22
 categories: [books, reviews]
 tags: [books, reviews, 2015]
 ---

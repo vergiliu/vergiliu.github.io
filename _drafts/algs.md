@@ -1,15 +1,17 @@
 ---
 layout: post
-title: "Generic"
-date: 2015-12-31 22:22:22
-categories: [books, reviews]
-tags: [books, reviews, 2015]
+title: "Coursera - Princeton Algorithms - Part 1 of 2"
+date: 2015-10-01 22:22:22
+categories: [courses, online]
+tags: [coursera, online, courses, 2015]
 ---
+
 Algorithms (Part I) - Princeton
 
-Week1 Union Find
+`Week1 Union Find`
 
-Week2 Stacks, Queues, Bags
+`Week2 Stacks, Queues, Bags`
+
 - loitering - references to objects that are no longer used
 - stack implmented as array
     - resizing array at 1/4 and 1/2 full
@@ -33,7 +35,8 @@ Week2 Stacks, Queues, Bags
     - convex hull = smallest area that encloses the points
         - Graham scan
 
-Week 3 Sorting methods
+`Week 3 Sorting methods`
+
 - Merge sort
     - copy initial array (can be optimizeds), then each compare each half array and put smallest element in initial array, by incrementing either i (index in 1st half) or j (index in the 2nd half)
     - N log_2 N
@@ -71,7 +74,8 @@ Week 3 Sorting methods
         - implicit implementation as a tree
 - sorting used in variety of situations
 
-Week 4 - Priority Queues
+`Week 4 - Priority Queues`
+
 - priority queues used in A* search, data compression huffman, bayesian spam filter
 - min or max PQ
 - binary heap
@@ -95,28 +99,30 @@ Week 4 - Priority Queues
     - Binary Search Tree  (BST) - explicit implementation as tree: key, value, reference to left / right sub-tree - smaller/greater
             - search and insert are 1.39 lg N for BST in average case, and N in worst case
             - deletion takes sqrt(N)
-Week 5 - Balanced Sort Trees
-    - 2-3 trees
-        - (2-3 tree): tree can have either 2 or 3 leaves and node can have 1 or 2 keys,
-            - with middle leaf key value being between the the 2 keys
-            - insertion we temporarily create 4 leaves/3 nodes node for which the middle element goes up the tree
-                - there might be cases when height increases if top node is already a 3 node
-            - all transformations maintain symmetry and perfect balance
-            - 18-30 max height for billions of nodes
-            - all operations are c * log N, constant time - c, depends on implementation (c lg N, so base 2)
-    - Red Black BST
-    - LLRB - Left Leaning Red-Black BST
-        - search works the same as in the BST
-        - rotate left operations to move a right-leaning RED link and make it lean left
-        - rotate right and flip colors (when 2 RED links are coming out of the same node)
-        - search/insert/delete 2* lg N, max height 2 * lg N
-    - B-tree
-        - generalized version of 2-3 tree
-        - allow up to M-1 keys per node
-        - when node is full we split it
-        - at most log M/2 N for search
-    - Java: TreeMap and TreeSet are implemented using RedBlack-tree
-    - in databases, filesystems B trees
+
+`Week 5 - Balanced Sort Trees`
+
+- 2-3 trees
+    - (2-3 tree): tree can have either 2 or 3 leaves and node can have 1 or 2 keys,
+        - with middle leaf key value being between the the 2 keys
+        - insertion we temporarily create 4 leaves/3 nodes node for which the middle element goes up the tree
+            - there might be cases when height increases if top node is already a 3 node
+        - all transformations maintain symmetry and perfect balance
+        - 18-30 max height for billions of nodes
+        - all operations are c * log N, constant time - c, depends on implementation (c lg N, so base 2)
+- Red Black BST
+- LLRB - Left Leaning Red-Black BST
+    - search works the same as in the BST
+    - rotate left operations to move a right-leaning RED link and make it lean left
+    - rotate right and flip colors (when 2 RED links are coming out of the same node)
+    - search/insert/delete 2* lg N, max height 2 * lg N
+- B-tree
+    - generalized version of 2-3 tree
+    - allow up to M-1 keys per node
+    - when node is full we split it
+    - at most log M/2 N for search
+- Java: TreeMap and TreeSet are implemented using RedBlack-tree
+- in databases, filesystems B trees
 - Hash Tables
     - each type of data depends on type of data
     - hashCode returns 32bit int, equal() and hashCode() should be equal
