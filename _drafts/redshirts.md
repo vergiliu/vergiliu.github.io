@@ -17,9 +17,10 @@ I would nonetheless recommend it, for the easy and short read and overall funny 
 Rating 3/5
 
 
-| Apple iTunes | [A] |
-| Google Play  |  |
-| Goodreads    |  |
-| Amazon       |  |
+| Apple | [iTunes] |
+| Google   | [Play] |
+| Goodreads   | [Goodreads]  |
 
-[A]: https://itunes.apple.com/us/book/redshirts/id501758516?mt=11
+[iTunes]: https://itunes.apple.com/us/book/redshirts/id501758516?mt=11
+[Play]: https://play.google.com/store/books/details/John_Scalzi_Redshirts?id=2myG-uWq5zQC&hl=en
+[Goodreads]: http://www.goodreads.com/book/show/13055592-redshirts
