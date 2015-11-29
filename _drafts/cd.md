@@ -27,8 +27,13 @@ Ch5 - Deployment pipeline
 	- should help you determine cycle-time
 	- some metrics can help you determine the issues: test coverage, defects #, # builds / day, build duration
 	- get build and build steps metrics and check which ones can be improved
-	 
+
 Ch6 - Build and deploy scripting
+- quickly going over the most common build tools: make, ant, msbuild, maven, rake, buildr
+- use same scripts to deploy to every environment
+- build traceability in binaries, VCSs
+- automation should be the only way to deply software
+Ch7 - Commit stage
 
 
 Rating unrated/5
