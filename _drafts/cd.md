@@ -33,7 +33,20 @@ Ch6 - Build and deploy scripting
 - use same scripts to deploy to every environment
 - build traceability in binaries, VCSs
 - automation should be the only way to deply software
+
 Ch7 - Commit stage
+- fail fast, notify asap, limited scope affected by the change
+	- pretested commit
+- break on compilation, tests, error in env. - fix immediately by team
+- separate env. specific config from the build scripts
+- devs have sense of ownership
+- maybe use a build master (owner) for large teams
+- artifact repo: binary creation should be repeatable
+- testing pyramid: unit, service, UI
+	- UI at acceptance level, don't touch DB, use dependency injection,
+	- acceptance tests after commit stage tests
+	- use stubbing for large scale components or systems, for components prefer mocking
+		- for mocks we can verify how the code behaved; can also be used to isolate 3rd party code
 
 
 Rating unrated/5
