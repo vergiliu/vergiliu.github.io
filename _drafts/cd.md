@@ -47,6 +47,11 @@ Ch7 - Commit stage
 	- acceptance tests after commit stage tests
 	- use stubbing for large scale components or systems, for components prefer mocking
 		- for mocks we can verify how the code behaved; can also be used to isolate 3rd party code
+	- minimize state
+	- "fake time" use replacement classes for working with time/date
+	- try to keep commit stage time to 5-10 minutes (upper bound)
+		- split into parts and parallelize if not possible
+- on every change: build, run tests, produce metrics; must check-in often
 
 
 Rating unrated/5
