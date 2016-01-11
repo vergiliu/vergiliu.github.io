@@ -53,6 +53,30 @@ Ch7 - Commit stage
 		- split into parts and parallelize if not possible
 - on every change: build, run tests, produce metrics; must check-in often
 
+Ch8 - Automated Acceptance Testing
+- acceptance tests that verifies the acceptance criteria of a story
+	- validating business acceptance criteria
+	- business facing
+	- some scenarios difficult to test otherwise
+	- used when making very big changes to the application
+- create acceptance test suites
+	- to be maintainable they have to be layered
+	(- use iterative processes?)
+	- BDD approach to testing gives us executable specifications and generated documentation
+	- window driver pattern
+- we should use the app API to set up the initial data (state)
+- try to make tests atomic, or cleaning up after themselves
+- never add testing interfaces to production deployed components
+- handling asyncrony - try to wrap it in synchronous calls
+- test environment should mimic external systems
+	- minimize coupling between tested system and external systems
+	- delivery team should be resposible for acceptance tests
+	- if they are not fixed asap tests will deliver little to no value
+- first chance to check if automated deployment works
+- tend to your acc testing over time
+- parallelize, virtualize, use grid (for Selenium)
+
+
 
 Rating unrated/5
 
