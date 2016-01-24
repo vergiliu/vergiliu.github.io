@@ -99,7 +99,24 @@ Ch 9 - Non Functional Requirements
 - overall it might be a good idea to separate capacity tests out of the pipeline if integrating them is a too-complex task
 
 Ch 10 - Deploying and Releasing Applications
+- a deployment strategy is beneficial if agreed upon at the beginning of the project
+- deployment should be done automatically from day 1, same tools/scripts should be used for all envs.
+- possibility of viewing which build is in which stage (of the pipeline)
+- we should have smoke tests after deployment to make sure the deployment is running, or be able to diagnose it quickly otherwise
+- we should have a way to select any version that has passed the previous "gate" successfully
+- promoting configurations as well as binaries
+
+276
+
 Ch 11 - Managing Infra and Environments
+- state of infra should be known through monitoring, and should be specified through version controlled config.
+- we should catch environment problems early in the initial stages
+- by striving to release as often as possible we will get little change between releases
+- identifying the procedures to release (CAB, ITIL documents, etc) should be part of dev team release plan
+- ops teams have visibility into environment using monitoring (Nagios, OpenNMS, HP OpsMgr)
+- use the technologies the Ops Teams is most familiar with (Shell, PowerShell)
+	- if same process is used to deploy all envs. it is important to be familiar to all teams concerned
+- keep all configurations of the infra in version control
 page 325
 
 Ch 12 - Manging Data
