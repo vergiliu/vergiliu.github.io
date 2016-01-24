@@ -75,7 +75,29 @@ Ch8 - Automated Acceptance Testing
 - first chance to check if automated deployment works
 - tend to your acc testing over time
 - parallelize, virtualize, use grid (for Selenium)
+
 Ch 9 - Non Functional Requirements
+- Performance - time to process a single trasaction
+- Throughput - number of transactions the system can process in a given timespan
+- Capacity - maxim throughput the system can sustain with acceptable response time for a given request
+- it's essential to identify correctly which one is the main focus point
+- important to consider them upfront, in the early phases of the project as they are more difficult to tackle later on
+- "Premature optimization is the root of all evil" - D. Knuth
+- try to avoid the tendency to start with optimizing, and concentrate on writing "clean" code
+- important ability during testing is to be able to simulate realistic use scenarios
+- capacity tests should be able to run in parallel with different scenarios
+- isolate environments as far as possible
+- be careful about virtualizing
+- be wary about assuming (linear) scaling in case performance testing environment is not same as production
+	- most of the times, it is difficult to get same prod. environment just for capacity testing
+- Automatic capacity testing
+	- tests should be short, repeatable, robust and test real-world scenarios
+	- we can try to scale up acceptance scenarios which are already well defined/undestood and real
+	- recommendation is to avoid capacity testing through UI and focus more on API/low-level API
+	- for high performance apps, the tests themselves must be certified in some way that they apply
+	the counted on load to the environment and that they are not the actual bottleneck
+- overall it might be a good idea to separate capacity tests out of the pipeline if integrating them is a too-complex task
+
 Ch 10 - Deploying and Releasing Applications
 Ch 11 - Managing Infra and Environments
 page 325
@@ -97,6 +119,10 @@ Ch 12 - Manging Data
 	- for exploratory testing using production data is not necessarily needed
 - (reproduction scenarios for issues - prod db is necessary)
 344
+Ch 13 - Managing Components and Dependencies
+415
+Ch 14 - Advanced version control
+441
 
 
 Rating unrated/5
