@@ -75,7 +75,28 @@ Ch8 - Automated Acceptance Testing
 - first chance to check if automated deployment works
 - tend to your acc testing over time
 - parallelize, virtualize, use grid (for Selenium)
+Ch 9 - Non Functional Requirements
+Ch 10 - Deploying and Releasing Applications
+Ch 11 - Managing Infra and Environments
+page 325
 
+Ch 12 - Manging Data
+- have automated database migration in place (flyway, liquibase)
+- roll forward and roll-back* (not really necessary lately)
+- fwd/backward compatibility between layers (app -> db)
+- unit tests must not run against database or in memory db / must be isolated
+- coupling between tests/data: test isolation, test adapting, test sequence
+	- for 1st we can use partitioning of data as well
+	- effective tests are not data driven
+- data in acceptance tests
+	- more complex inherently, reference data can be kept as db dumps
+	- use APIs to put system in correct state
+- capacity tests
+	- automate generation of data
+	- use acceptance tools for data and scale it up
+	- for exploratory testing using production data is not necessarily needed
+- (reproduction scenarios for issues - prod db is necessary)
+344
 
 
 Rating unrated/5
