@@ -97,6 +97,22 @@ Ch 9 - Non Functional Requirements
 	- for high performance apps, the tests themselves must be certified in some way that they apply
 	the counted on load to the environment and that they are not the actual bottleneck
 - overall it might be a good idea to separate capacity tests out of the pipeline if integrating them is a too-complex task
+- (optionally) have a possibility to roll-back
+	- backup data before beginning, and practice restore/rollback
+	- Blue-Green deployments
+		- have 2 similar prod deployments, install on one test on the other then switch
+			- or have apps installed on same env twice and make the switch
+		- possible database issues, make read only before switching
+	- Canary release
+		- deploy a new version of one application in prod
+		- find possible problems with that application
+		- roll back is easy and simple - as we only have 1 app
+		- can be used for A/B testing
+		- complicated database upgrades
+- emergency fixes should go through same processes as regular updates
+	- otherwise almost impossible to reproduce on next iteration depending on changes done
+	- sometimes easier to just roll back
+- "Deployment Is the Whole Team’s Responsibility"
 
 Ch 10 - Deploying and Releasing Applications
 - a deployment strategy is beneficial if agreed upon at the beginning of the project
@@ -105,8 +121,7 @@ Ch 10 - Deploying and Releasing Applications
 - we should have smoke tests after deployment to make sure the deployment is running, or be able to diagnose it quickly otherwise
 - we should have a way to select any version that has passed the previous "gate" successfully
 - promoting configurations as well as binaries
-
-276
+on page 266
 
 Ch 11 - Managing Infra and Environments
 - state of infra should be known through monitoring, and should be specified through version controlled config.
@@ -117,6 +132,15 @@ Ch 11 - Managing Infra and Environments
 - use the technologies the Ops Teams is most familiar with (Shell, PowerShell)
 	- if same process is used to deploy all envs. it is important to be familiar to all teams concerned
 - keep all configurations of the infra in version control
+- lock down your environments in the same way
+- same changes (requests & approvals) should be in place for UAT and Prod
+	- we should have traceability for all changes, including testing of the updates
+- prefer automation over documentation
+	- provisioning of new hardware resources should be automated
+- small example of having puppet deploy postfix email server
+- config of middleware comprises: binaries, config, and data
+- "no technology can be considered enterprise ready if it can't be deployed and configured automatically"
+page 299
 page 325
 
 Ch 12 - Manging Data
