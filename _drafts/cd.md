@@ -121,7 +121,12 @@ Ch 10 - Deploying and Releasing Applications
 - we should have smoke tests after deployment to make sure the deployment is running, or be able to diagnose it quickly otherwise
 - we should have a way to select any version that has passed the previous "gate" successfully
 - promoting configurations as well as binaries
-on page 266
+- CD must be to production, otherwise it's not really CD
+- "CD isn't for everyone"
+- user installed software - download in background and install on restart
+	- not upgrading automtically means devs dont trust their software
+	- able to easily report issues
+- fail fast / no changes on prod
 
 Ch 11 - Managing Infra and Environments
 - state of infra should be known through monitoring, and should be specified through version controlled config.
@@ -140,8 +145,11 @@ Ch 11 - Managing Infra and Environments
 - small example of having puppet deploy postfix email server
 - config of middleware comprises: binaries, config, and data
 - "no technology can be considered enterprise ready if it can't be deployed and configured automatically"
-page 299
-page 325
+- Virtualization benefits for CD and environments management
+	- parallel testing on mulitple VMs
+- same mentions for Cloud Computing
+- monitoring and logging are skimmed over, but with some good recommendations
+	- nagios-cucumber :))
 
 Ch 12 - Manging Data
 - have automated database migration in place (flyway, liquibase)
@@ -159,9 +167,10 @@ Ch 12 - Manging Data
 	- use acceptance tools for data and scale it up
 	- for exploratory testing using production data is not necessarily needed
 - (reproduction scenarios for issues - prod db is necessary)
-344
+
 Ch 13 - Managing Components and Dependencies
-415
+- starting off with the left foot, as branching is again a no-no
+- hide new functionality until it's ready
 Ch 14 - Advanced version control
 441
 
