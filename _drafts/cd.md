@@ -171,6 +171,14 @@ Ch 12 - Manging Data
 Ch 13 - Managing Components and Dependencies
 - starting off with the left foot, as branching is again a no-no
 - hide new functionality until it's ready
+- "people in component-centered teams tend to form silos and optimize locally"
+- splitting the application into components doesn't imply we make it n-tier
+- important: fast feedback and visibility into status
+- NO circulr dependency
+- managing binaries
+	- shuold not contain that cannot be reproduced
+	- keep ids (hashes) of binries
+
 Ch 14 - Advanced version control
 441
 
