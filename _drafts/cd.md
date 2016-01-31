@@ -1,10 +1,14 @@
 ---
 layout: post
 title: "Continuous Delivery"
-date: 2015-12-31 23:45:00
-categories: [books, video, reviews, tutorials, articles]
-tags: [books, video, reviews, 2015]
+date: 2016-01-31 22:22:22
+categories: [books, reviews]
+tags: [books, reviews, 2016]
 ---
+
+Overall a good book, you will need to have a clear picture idea of what's CI as some concepts are just skimmed over, not only CI related.
+One small hindrance is that it tends to repeat quite some ideas throughout the book, and it could have been smaller than the current approach.
+An alternative approach is to focus on the interesting to you chapters, but even though there are lots of concepts introduced and covered, some need a lot of expansion to be relevant.
 
 Ch5 - Deployment pipeline
 - Process can be seen as a value stream map -> fundamentlly an automated software delivery process
@@ -177,20 +181,27 @@ Ch 13 - Managing Components and Dependencies
 - NO circulr dependency
 - managing binaries
 	- shuold not contain that cannot be reproduced
-	- keep ids (hashes) of binries
+	- keep ids (hashes) of binaries
+- skimming over the Maven tool possibilities
 
 Ch 14 - Advanced version control
-441
+- VCS history, CVS, SVN
+- DVCS
+	- frequent commits/pushes
+- a few branching strategies presented
 
+Ch 15 - Managing Continuous Delivery
+- steps for starting a new project
+- a couple of possible causes and fixes for common issues
 
-Rating unrated/5
+Rating 4/5
 
 | Apple      | [iTunes] |
 | Google     | [Play Store] |
 | Goodreads  | [Goodreads] |
 | Amazon     | [Books] |
 
-[iTunes]: https://itunes.apple.com/us/book/
-[Goodreads]: https://www.goodreads.com/book/show/
-[Play Store]: https://play.google.com/store/books/details/
-[Books]: http://www.amazon.com/
+[iTunes]: https://itunes.apple.com/us/book/continuous-delivery-reliable/id401000597?mt=11
+[Goodreads]: https://www.goodreads.com/book/show/8686650-continuous-delivery
+[Play Store]: https://play.google.com/store/books/details/Jez_Humble_Continuous_Delivery?id=6ADDuzere-YC&hl=en
+[Books]: http://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912
