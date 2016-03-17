@@ -101,5 +101,5 @@ SNS
 - Topic ARN is necessary to manage it from the CLI tools
 - to see all notifications `as-describe-notification-configurations`
 - to update notifications for this LB group `as-put-notificaation-configuration`
-    - arn:aws:sns:us-east-1:858627883549:lab-as-topic
-    - as-put-notification-configuration lab-as-group --topic-arn arn:aws:sns:us-east-1:858627883549:lab-as-topic --notification-types autoscaling:EC2_INSTANCE_LAUNCH, autoscaling:EC2_INSTANCE_TERMINATE
+    - arn:aws:sns:us-east-1:22549:lab-as-topic
+    - as-put-notification-configuration lab-as-group --topic-arn arn:aws:sns:us-east-1:22549:lab-as-topic --notification-types autoscaling:EC2_INSTANCE_LAUNCH, autoscaling:EC2_INSTANCE_TERMINATE
