@@ -22,6 +22,7 @@ EC2
 CloudWatch
 - monitoring (ELB) dashboard
 - details about zones, and request types
+- we can create an Alarm in CloudWatch that triggers an event in the auto-scale group
 
 S3 (Simple Storage System)
 - charged is done based on storage and requests of data (in and out), not on bucket(s) creation
@@ -41,8 +42,19 @@ EBS (Elastic Block Store)
 - persisten network attached storage, independent from the instance itself
 - automatically replicated in the same Availability Zone (AZ)
 - snapshotting is possible, with the snapshots saved in S3
-- IOPS - can be provisioned
+- IOPS
+    - can be provisioned
     - bursty for non-provisioned ones
+- for pre-existing images for AMIs a volume is created from a snapshot of the OS image
+- on AMIs termination they can be saved or discarded (default behavior)
+- volumes w/ sizes between 1GB to 1TB can be created
+    - create, attach (to instances)
+    - volumes can have tags
+- Snapshots
+    - create from a running instance
+    - for DB we should use a read replica, for which writes are temporarily suspended to improve snapshotting speeds
+    - new volumes can be created directly from existing snapshots
+
 
 ELB (Elastic Load Balancing)
 - distributes traffic against multiple instances and multiple zones, automatically switching between all options
@@ -55,9 +67,39 @@ IAM
     - Permissions
 - users login - https://<main-id>.signin.aws.amazon.com
 
+Advanced topics
+Auto Scaling
+- the policy consits of
+    - a launch configuration (AMI, instance type, security group) and
+    - an auto scaling group (min/max numbers, AZ, ELB)
+- the triggers can be done by CloudWatch, manually or on a schedule
+- all costs are per hour, so one should pull up/down instances quickly
+- exact params for as-launch are:
+    - AMI image ID
+    - Instance type
+    - Key pair generated
+    - Name of Security Group
+    - launch config file
+    - ec2-metadata -z (zone)
+    - extra credentials are needed for authentication of the load balancer commands
+    - create AS groups w/ `as-create-auto-scaling-group`
+    - create launch config w/ `s-create-launch-config`
+- auto-scaling instances are launched without names
+    - can be tagged with `as-create-or-update-tags`
+- AS will be integrated with ELB, and you can get notifications from SNS (Simple Notification Service) on changes
+    - see details in SNS below
+- we can create a scale up/down policy
+    - as-put-scaling-policy lab-scale-up-policy --auto-scaling-group lab-as-group --adjustment=1 --type ChangeInCapacity --cooldown 300
+    - as-put-scaling-policy lab-scale-down-policy --auto-scaling-group lab-as-group "--adjustment=-1" --type ChangeInCapacity --cooldown 300
+- we can create an Alarm in CloudWatch that triggers an event in the auto-scale group
+- all scaling can be analyzed by using `as-describe-scaling-activities --show-long`
+- all autoscaling processes can be suspended/resumed w/ `as-supend/resume-...`
 
 
-[iTunes]: https://itunes.apple.com/
-[Goodreads]: https://www.goodreads.com/
-[Play Store]: https://play.google.com/store/books/
-[Books]: http://www.amazon.com/
+SNS
+- create topic / email / create subscription - on ARN
+- Topic ARN is necessary to manage it from the CLI tools
+- to see all notifications `as-describe-notification-configurations`
+- to update notifications for this LB group `as-put-notificaation-configuration`
+    - arn:aws:sns:us-east-1:858627883549:lab-as-topic
+    - as-put-notification-configuration lab-as-group --topic-arn arn:aws:sns:us-east-1:858627883549:lab-as-topic --notification-types autoscaling:EC2_INSTANCE_LAUNCH, autoscaling:EC2_INSTANCE_TERMINATE
