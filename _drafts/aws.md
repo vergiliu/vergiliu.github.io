@@ -39,12 +39,12 @@ S3 (Simple Storage System)
 - to be readable by everyone you will need to have Everyone - List as Add more permissions
 
 EBS (Elastic Block Store)
-- persisten network attached storage, independent from the instance itself
+- persistent network attached storage, independent from the instance itself
 - automatically replicated in the same Availability Zone (AZ)
 - snapshotting is possible, with the snapshots saved in S3
 - IOPS
     - can be provisioned
-    - bursty for non-provisioned ones
+    - bursty for non-provisioned ones (default)
 - for pre-existing images for AMIs a volume is created from a snapshot of the OS image
 - on AMIs termination they can be saved or discarded (default behavior)
 - volumes w/ sizes between 1GB to 1TB can be created
