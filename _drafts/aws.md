@@ -8,7 +8,7 @@ tags: [tutorial, 2015]
 
 `AWS`
 
-EC2
+### EC2
 - all instances have a private + public IP (NAT-ed)
 - Load Balancers
     - use the security group assigned when the instance was created
@@ -18,13 +18,17 @@ EC2
 - Elastic IPs
     - can be assigned to running instances: they will be static IPs and can be assigned to one instance, work across availability zones
 - instances tags
+- in SecurityGroups of EC2 you can set IPs as instance ID
+- EC2 security guide - http://aws.amazon.com/articles/Amazon-EC2/9001172542712674
+- EC2 root device guide - http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html
 
-CloudWatch
+### CloudWatch
 - monitoring (ELB) dashboard
 - details about zones, and request types
 - we can create an Alarm in CloudWatch that triggers an event in the auto-scale group
 
-S3 (Simple Storage System)
+### S3 (Simple Storage System)
+- secure, durable, highly scalable object storage
 - charged is done based on storage and requests of data (in and out), not on bucket(s) creation
 - name of bucket *must be unique across all S3 buckets* (really?!?)
 - backup and storage, media and app hosting, high traffic hosting
@@ -38,7 +42,7 @@ S3 (Simple Storage System)
     - for JS, "wide array of configrations options"
 - to be readable by everyone you will need to have Everyone - List as Add more permissions
 
-EBS (Elastic Block Store)
+### EBS (Elastic Block Store)
 - persistent network attached storage, independent from the instance itself
 - automatically replicated in the same Availability Zone (AZ)
 - snapshotting is possible, with the snapshots saved in S3
@@ -55,20 +59,72 @@ EBS (Elastic Block Store)
     - for DB we should use a read replica, for which writes are temporarily suspended to improve snapshotting speeds
     - new volumes can be created directly from existing snapshots
 
+### EMR (Elastic Map-Reduce) - intro youtube - https://www.youtube.com/watch?v=Hhj3fOdt7zo
+- process large amounts of data w/o managing instances
+- launch & scale Hadoop applications using EC2 & S3
+    - Apache Hive, Pig, Pig Latin support, most known Hadoop apps are directly available
+- EC2 images are preconfigured
+- Master the node which distributes jobs to other nodes
+    - worker nodes
+- Metrics about jobs can be viewed in CloudWatch
+- cluster can be terminated on job completion
+- wordSplitter.py for MR AWS file
+- input and output (including logs) must be saved to S3, or be provisioned from S3
+    - worker jobs can be as well from S3
 
-ELB (Elastic Load Balancing)
+
+### ELB (Elastic Load Balancing)
 - distributes traffic against multiple instances and multiple zones, automatically switching between all options
 - works with VPC, you can create an internal LB environment for your internal network within the VPC
 - integrated certificate management for SSL
 
-IAM
+### IAM
 - Groups
 - Users
     - Permissions
 - users login - https://<main-id>.signin.aws.amazon.com
 
-Advanced topics
-Auto Scaling
+### DynamoDB
+- NoSQL, single-digit millisecond latency, document or key-value store
+
+### SQS (Simple Queue Service)
+- fully managed message queing service
+- any level of data, at any throughput w/o losing anything
+
+
+### SNS (Simple Notification Service)
+- fully managed push notification service
+    - push to devices, Windows, mobile, Baidu cloud, sms text, email, http to any endpoint
+- create topic / email / create subscription - on ARN
+- Topic ARN is necessary to manage it from the CLI tools
+- to see all notifications `as-describe-notification-configurations`
+- to update notifications for this LB group `as-put-notificaation-configuration`
+    - we will need the identifier -> arn:aws:sns:us-east-1:22549:lab-as-topic
+    - as-put-notification-configuration lab-as-group --topic-arn arn:aws:sns:us-east-1:22549:lab-as-topic --notification-types autoscaling:EC2_INSTANCE_LAUNCH, autoscaling:EC2_INSTANCE_TERMINATE
+
+### CloudFormation
+- create stack, from a JSON file that we can store in S3
+    - QueueWatcherCount can be set to >0, so we can monitor the actions done by CloudFormation
+- Events lower tab we can see the progress of the current actions/operations
+- Resources tab in the lower part shows the queues it uses/publishes to and policies
+- Sample templates depending on AZ - http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html
+
+### SQS (Simple Queue Service)
+- in actions of a particular queue we can see or delete messages (View/Delete messages), but while we're doing this no other applications have access to this queue
+- various services (can) push messages to SQS/SNS so we can use them to register or track actions in AWS
+- push notifications from SNS to SQS to be stored, later retrieved or analyzed
+
+### VPC (Virtual Private Cloud)
+- can create logically isolated AWS networking section w/ servers w/ or w/o internet access, own set of IP addresses and ranges
+- when using the VPC wizard to create a VPC, we can use a NAT host for NAT-ing
+- when launching EC2 instances we can assign them automatically to internal IP range and VPC
+- best practice - mirror environment across 2 zones and add ELB to balance between them
+- creation of route tables and subnets can be performed from the left hand menus
+    - by default the subnets don't have internet acces, safety first principle
+- in SecurityGroups of EC2 you can set IPs as instance ID
+
+### Advanced topics
+#### Auto Scaling
 - the policy consits of
     - a launch configuration (AMI, instance type, security group) and
     - an auto scaling group (min/max numbers, AZ, ELB)
@@ -80,7 +136,8 @@ Auto Scaling
     - Key pair generated
     - Name of Security Group
     - launch config file
-    - ec2-metadata -z (zone)
+    - `ec2-metadata -z` (zone)
+        - lots of other informations can be gathered using this tool
     - extra credentials are needed for authentication of the load balancer commands
     - create AS groups w/ `as-create-auto-scaling-group`
     - create launch config w/ `s-create-launch-config`
@@ -94,12 +151,15 @@ Auto Scaling
 - we can create an Alarm in CloudWatch that triggers an event in the auto-scale group
 - all scaling can be analyzed by using `as-describe-scaling-activities --show-long`
 - all autoscaling processes can be suspended/resumed w/ `as-supend/resume-...`
+- quick reference card for Auto Scaling - http://awsdocs.s3.amazonaws.com/AutoScaling/latest/as-qrc.pdf
 
-
-SNS
-- create topic / email / create subscription - on ARN
-- Topic ARN is necessary to manage it from the CLI tools
-- to see all notifications `as-describe-notification-configurations`
-- to update notifications for this LB group `as-put-notificaation-configuration`
-    - arn:aws:sns:us-east-1:22549:lab-as-topic
-    - as-put-notification-configuration lab-as-group --topic-arn arn:aws:sns:us-east-1:22549:lab-as-topic --notification-types autoscaling:EC2_INSTANCE_LAUNCH, autoscaling:EC2_INSTANCE_TERMINATE
+#### Dynamic Registration
+- Elastic environment - is highly utilized all the time, by using just in time provisioning
+    - add instances as some metric increases (e.g. CPU), remove them when decreasing
+- Scalable architecture - on-demand elastic growth w/o changing of architecture
+    - Horizontal scaling: add/remove same size instances
+- Bootstraping: automatically configure the instance on boot
+    - by accessing already available and accessible meta-data
+    - one such tool is CloudInit from Canonical/Ubuntu
+    - CloudFormation: create and delete AWS (instances, AS groups, DynamoDB, etc) called stacks by using a JSON template
+        - stacks can be used to create/update existing stacks
