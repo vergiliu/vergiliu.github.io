@@ -21,6 +21,7 @@ tags: [tutorial, 2015]
 - in SecurityGroups of EC2 you can set IPs as instance ID
 - EC2 security guide - http://aws.amazon.com/articles/Amazon-EC2/9001172542712674
 - EC2 root device guide - http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html
+- instances can have termination protection in order to prevent accidental deletion
 
 ### CloudWatch
 - monitoring (ELB) dashboard
@@ -78,6 +79,16 @@ tags: [tutorial, 2015]
 - works with VPC, you can create an internal LB environment for your internal network within the VPC
 - integrated certificate management for SSL
 
+### EBS (Elastic Bean Stalk)
+- deploy quickly web applications w/o knowledge of pieces required for cloud
+    - monitoring, auto-scaling, load balancing all handled by EBS
+    - no charge for EBS, you pay the resources that you're using
+- various options to select the extras needed
+    - web server - preconfigured options for most major platforms (Ruby, python, node.js, ...)
+    - database server (RDS DB) - engine selection from MySQL, PostgreSQL, SQL Server, Oracle
+        - instance type and database size
+- next step is that all necessary AWS services are started and configured to support your environment
+
 ### IAM
 - Groups
 - Users
@@ -103,9 +114,10 @@ tags: [tutorial, 2015]
     - as-put-notification-configuration lab-as-group --topic-arn arn:aws:sns:us-east-1:22549:lab-as-topic --notification-types autoscaling:EC2_INSTANCE_LAUNCH, autoscaling:EC2_INSTANCE_TERMINATE
 
 ### CloudFormation
-- create stack, from a JSON file that we can store in S3
+- create a stack of applications, from a JSON file that we can store in S3
+    - collection of related AWS resources (stack), provisioning and updating them
     - QueueWatcherCount can be set to >0, so we can monitor the actions done by CloudFormation
-- Events lower tab we can see the progress of the current actions/operations
+    - Events lower tab we can see the progress of the current actions/operations
 - Resources tab in the lower part shows the queues it uses/publishes to and policies
 - Sample templates depending on AZ - http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html
 
@@ -119,9 +131,32 @@ tags: [tutorial, 2015]
 - when using the VPC wizard to create a VPC, we can use a NAT host for NAT-ing
 - when launching EC2 instances we can assign them automatically to internal IP range and VPC
 - best practice - mirror environment across 2 zones and add ELB to balance between them
+- permits inbound and outbound rules for filtering traffic
+    - Network ACLs are very expensive from a performance point of view
+    - rules can be added to restrict also security groups
 - creation of route tables and subnets can be performed from the left hand menus
     - by default the subnets don't have internet acces, safety first principle
 - in SecurityGroups of EC2 you can set IPs as instance ID
+- Bastion servers sit between the public internet and the private VPC, act as entrance point to the VPC or private network
+    - m1.small should serve all but the largest networks, also no SSH-ing into this instance, on error just replace
+- JSON
+    - Mappings section; allows you to re-use the same template in all AZ, selecting only the required server types
+    - VPC section: define the VPC address
+        - here you need to specify the InternetGateway which will allow internet connectivity, AttachGateway
+        - next specify the subnets (Type: AWS::EC2::Subnet), by referring (Ref) to the VPC we defined previously
+        - routing tables (AWS::EC2::RouteTable): one for the public and one for the private networks, there can be up to 1 per subnet
+            - we will specify the NAT server as router for the private section
+            - next, we associate the subnets w/ the routing tables
+        - next create Network ACLs (::PublicSubnetAcl and ::NetworkAcl) and then add the rules for ACLs
+            - one pair ingress + egress, at least one pair needed
+        - associate ACLs w/ subnets
+    - create a NAT server (is a virtual EC2 appliance, we specified before)
+        - to describe it we can specify REFerences to the Mappings we described in the JSON, e.g. Fn::FindInMap
+        - NAT needs public (Elastic IP) to communicate w/ the Internet
+        - define a NAT security group in order to specify which ports are opened or closed
+        - also a private security group for communication inside the private Network
+    - add an Output section
+- to delete the stack we need to DISABLE termination protection in the EC2 for the NAT instance
 
 ### Advanced topics
 #### Auto Scaling
