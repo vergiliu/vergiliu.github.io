@@ -48,6 +48,11 @@ tags: [tutorial, 2015]
 - default root (e.g. index.html) is the main path if none is specified
 - you can select the region limits where your content is accessible
 
+#### CodeDeploy
+- automates code deploy to EC2 instances
+- launch, control, and monitor instances for each instance running in a DTAP environment
+- no additional charge for CodeDeploy
+    - for the sample application the CloudFormation tool is used
 
 #### AWS Trusted Advisor
 - Best practices of security are in-built: VPC, IAM, network ACLs, ... and T.A. offers over 30 checks to monitor and improve security
@@ -259,6 +264,13 @@ tags: [tutorial, 2015]
     - extra credentials are needed for authentication of the load balancer commands
     - create AS groups w/ `as-create-auto-scaling-group`
     - create launch config w/ `s-create-launch-config`
+- we can also create the same config from the AWS CLI
+    - `aws create-launch-configuration .... `
+        - if we start spot instances, we need to specify the needed spot price `aws autoscaling create-launch-configuration ... --spot-price 0.03`
+        - --min-size A --max-size B or we can specify the number of always active instances w/ --desired-capacity
+    - check if creation was successful w/ `aws autoscaling describe-launch-configurations `
+    - auto-scaling groups can be queried w/ `aws autoscaling describe-auto-scaling-groups`
+        - metrics can be aggregated on group level and sent to CloudWatch that way
 - auto-scaling instances are launched without names
     - can be tagged with `as-create-or-update-tags`
 - AS will be integrated with ELB, and you can get notifications from SNS (Simple Notification Service) on changes
@@ -266,6 +278,9 @@ tags: [tutorial, 2015]
 - we can create a scale up/down policy
     - as-put-scaling-policy lab-scale-up-policy --auto-scaling-group lab-as-group --adjustment=1 --type ChangeInCapacity --cooldown 300
     - as-put-scaling-policy lab-scale-down-policy --auto-scaling-group lab-as-group "--adjustment=-1" --type ChangeInCapacity --cooldown 300
+    - to stop to AS group, we can set the capacity to 0 (zero)
+    - we can set a CloudWatch alarm in which the sum of all instances in instance hours surpasses a threshold, the auto-scaled instances are terminated
+        - also an email is sent to a list of addresses :)
 - we can create an Alarm in CloudWatch that triggers an event in the auto-scale group
 - all scaling can be analyzed by using `as-describe-scaling-activities --show-long`
 - all autoscaling processes can be suspended/resumed w/ `as-supend/resume-...`
