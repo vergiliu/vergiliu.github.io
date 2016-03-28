@@ -49,6 +49,23 @@ tags: [tutorial, 2015]
 - you can select the region limits where your content is accessible
 
 
+#### AWS Trusted Advisor
+- Best practices of security are in-built: VPC, IAM, network ACLs, ... and T.A. offers over 30 checks to monitor and improve security
+    - Cost optimization
+    - Security
+    - Fault tolerance
+    - Performance improvement
+- 4 of the best practices are free to all customers, to have access to full 37 Business or Enterprise support is needed
+    - service limits for resources that are 80% utilized
+    - access unrestricted (e.g. 0.0.0.0/0) to specific hosts
+    - MFA (Multi Factor Authentication) on Root account
+- remove rules which allow access unrestricted to hosts and/or ports (e.g. port 21 FTP)
+    - link will take you directly to Security Groups
+- analysis (refresh) can be performed every 5 minutes - hovering will give you time to next refresh
+- trusted weekly notification over email can be configured in Preferences of Trusted Advisor
+- AWS Security Best Practices - http://media.amazonwebservices.com/AWS_Security_Best_Practices.pdf
+
+
 #### Amazon Elastic Transcoder
 - media transcoding in the cloud
 - HLS (HTTP Live Streaming) streaming can adapt to the network speed
