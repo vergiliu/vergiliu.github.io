@@ -6,9 +6,9 @@ categories: [article, tutorial, noob]
 tags: [tutorial, 2015]
 ---
 
-`AWS`
+### Amazon Web Services (AWS)
 
-### EC2
+#### EC2
 - all instances have a private + public IP (NAT-ed)
 - Load Balancers
     - use the security group assigned when the instance was created
@@ -23,12 +23,12 @@ tags: [tutorial, 2015]
 - EC2 root device guide - http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html
 - instances can have termination protection in order to prevent accidental deletion
 
-### CloudWatch
+#### CloudWatch
 - monitoring (ELB) dashboard
 - details about zones, and request types
 - we can create an Alarm in CloudWatch that triggers an event in the auto-scale group
 
-### S3 (Simple Storage System)
+#### S3 (Simple Storage System)
 - secure, durable, highly scalable object storage
 - charged is done based on storage and requests of data (in and out), not on bucket(s) creation
 - name of bucket *must be unique across all S3 buckets* (really?!?)
@@ -43,7 +43,7 @@ tags: [tutorial, 2015]
     - for JS, "wide array of configrations options"
 - to be readable by everyone you will need to have Everyone - List as Add more permissions
 
-### EBS (Elastic Block Store)
+#### EBS (Elastic Block Store)
 - persistent network attached storage, independent from the instance itself
 - automatically replicated in the same Availability Zone (AZ)
 - snapshotting is possible, with the snapshots saved in S3
@@ -60,7 +60,7 @@ tags: [tutorial, 2015]
     - for DB we should use a read replica, for which writes are temporarily suspended to improve snapshotting speeds
     - new volumes can be created directly from existing snapshots
 
-### EMR (Elastic Map-Reduce) - intro youtube - https://www.youtube.com/watch?v=Hhj3fOdt7zo
+#### EMR (Elastic Map-Reduce) - intro youtube - https://www.youtube.com/watch?v=Hhj3fOdt7zo
 - process large amounts of data w/o managing instances
 - launch & scale Hadoop applications using EC2 & S3
     - Apache Hive, Pig, Pig Latin support, most known Hadoop apps are directly available
@@ -74,12 +74,12 @@ tags: [tutorial, 2015]
     - worker jobs can be as well from S3
 
 
-### ELB (Elastic Load Balancing)
+#### ELB (Elastic Load Balancing)
 - distributes traffic against multiple instances and multiple zones, automatically switching between all options
 - works with VPC, you can create an internal LB environment for your internal network within the VPC
 - integrated certificate management for SSL
 
-### EBS (Elastic Bean Stalk)
+#### EBS (Elastic Bean Stalk)
 - deploy quickly web applications w/o knowledge of pieces required for cloud
     - monitoring, auto-scaling, load balancing all handled by EBS
     - no charge for EBS, you pay the resources that you're using
@@ -89,21 +89,49 @@ tags: [tutorial, 2015]
         - instance type and database size
 - next step is that all necessary AWS services are started and configured to support your environment
 
-### IAM
+#### IAM
+- Security Groups
+    - virtual firewall fo in&out traffic
+        - you can specify allow rules but not deny rules
+        - by default no inbound traffic is allowed
+    - Bastion server
+        - single server which has access, with all other resources and applications removed for extra security
+- in the VPC you can use both
+    - SecurityGroups as well as - on the VPC portal
+    - ACL (Access Control Lists) - Network ACLs
 - Groups
 - Users
     - Permissions
 - users login - https://<main-id>.signin.aws.amazon.com
 
-### DynamoDB
+#### CloudTrail
+- web service that records AWS API calls
+    - source, destination, parameters, also made via Web, SDK, CLI, etc
+    - you can easily get the history of all calls for security analysis, in order to track changes to AWS resources, or for a compliance trail
+    - you can see the trail in S3 buckets
+
+#### DynamoDB
 - NoSQL, single-digit millisecond latency, document or key-value store
 
-### SQS (Simple Queue Service)
+#### SQS (Simple Queue Service)
 - fully managed message queing service
 - any level of data, at any throughput w/o losing anything
 
+#### Route 53
+- Highly available and scalable DNS
+    - CNAME or Canonical Name is a resource record used to specify that a domain is an alias for another domain, the canonical domain
+    - having a DNS failover means that traffic always is routed to the live application, also notifications can be sent when issues occur
+- monitors health and performance of your web application and other resources
+- Route 53 can route internet traffic between multiple services performing same functions only to the healthy ones (email servers, web servers)
+- automatically creates a NS (Name Server) resource when creating a new Hosted Zone (HZ)
+    - HZ = collection a resource records sets hosted by Route 53
+    - NS + SOA required for the HZ to work correctly
+- if the HZ is created, you can add (Create Record Set) pointing to an Elastic IP from an existing EC2 instance
+- in the Health Check we can create notifications sent to SNS
+- we can create a WWW Failover alias which takes content from pre-populated S3 messages (already available, no creation needed)
+    - main A alias must be set as Failover primary
 
-### SNS (Simple Notification Service)
+#### SNS (Simple Notification Service)
 - fully managed push notification service
     - push to devices, Windows, mobile, Baidu cloud, sms text, email, http to any endpoint
 - create topic / email / create subscription - on ARN
@@ -113,7 +141,7 @@ tags: [tutorial, 2015]
     - we will need the identifier -> arn:aws:sns:us-east-1:22549:lab-as-topic
     - as-put-notification-configuration lab-as-group --topic-arn arn:aws:sns:us-east-1:22549:lab-as-topic --notification-types autoscaling:EC2_INSTANCE_LAUNCH, autoscaling:EC2_INSTANCE_TERMINATE
 
-### CloudFormation
+#### CloudFormation
 - create a stack of applications, from a JSON file that we can store in S3
     - collection of related AWS resources (stack), provisioning and updating them
     - QueueWatcherCount can be set to >0, so we can monitor the actions done by CloudFormation
@@ -121,12 +149,15 @@ tags: [tutorial, 2015]
 - Resources tab in the lower part shows the queues it uses/publishes to and policies
 - Sample templates depending on AZ - http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html
 
-### SQS (Simple Queue Service)
+#### Amazon RDS (Relational Data Service)
+- setup a relational db (MySQL, Oracle, PostgreSQL)
+
+#### SQS (Simple Queue Service)
 - in actions of a particular queue we can see or delete messages (View/Delete messages), but while we're doing this no other applications have access to this queue
 - various services (can) push messages to SQS/SNS so we can use them to register or track actions in AWS
 - push notifications from SNS to SQS to be stored, later retrieved or analyzed
 
-### VPC (Virtual Private Cloud)
+#### VPC (Virtual Private Cloud)
 - can create logically isolated AWS networking section w/ servers w/ or w/o internet access, own set of IP addresses and ranges
 - when using the VPC wizard to create a VPC, we can use a NAT host for NAT-ing
 - when launching EC2 instances we can assign them automatically to internal IP range and VPC
@@ -159,6 +190,7 @@ tags: [tutorial, 2015]
 - to delete the stack we need to DISABLE termination protection in the EC2 for the NAT instance
 
 ### Advanced topics
+
 #### Auto Scaling
 - the policy consits of
     - a launch configuration (AMI, instance type, security group) and
