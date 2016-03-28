@@ -22,6 +22,18 @@ tags: [tutorial, 2015]
 - EC2 security guide - http://aws.amazon.com/articles/Amazon-EC2/9001172542712674
 - EC2 root device guide - http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/RootDeviceStorage.html
 - instances can have termination protection in order to prevent accidental deletion
+- *Spot Instances for EC2*
+    - best suited for distributed fault-tolerant takss
+    - name your price for EC2 instances
+    - price varies in real time, by the hour, last hour is not charged if instance is terminated
+    - instances may not start immediately
+    - you need to place a spot instance request - valid dates / type one-time or persistent / launch group / AZ group
+    - if you bid .25 and the price will be .23 for the period, you will pay the lower amount, if it goes over your instance stops
+    - there is a Spot Instance Price History for the past 90 days
+    - one-time request remains active until instance terminates, request expires, or request is cancelled
+        - persistent requests remain active until expired or cancelled
+    - in the last step of the request you can see current prices depending on the AZ selected
+
 
 #### CloudWatch
 - monitoring (ELB) dashboard
