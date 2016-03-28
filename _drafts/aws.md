@@ -34,6 +34,27 @@ tags: [tutorial, 2015]
         - persistent requests remain active until expired or cancelled
     - in the last step of the request you can see current prices depending on the AZ selected
 
+#### CloudFront
+- content delivery web service, accelerated delivery of content through Amazon edge locations
+    - no minimum usage restrictions
+    - dynamic, static, streaming content
+    - default allows users to access objects through HTTP and HTTPS
+    - cache for location for 24 hours
+    - after creating a distribution you might need to wait up to 15 minutes while its status will be DEPLOYED
+- as everything is cached, if you need to update various files, one idea would be to have the files versioned (e.g. _v2)
+    - if a file is changed CloudFront will still serve the cached version up to 1 day
+    - to invalidate the cache, in the Distribution Settings we can create a new Invalidations and specify the files we've (we're) updated(-ing)
+- CNAME can be added, up to 10 CNAMEs per distribution so you can use domain names e.g. www.mysite.com instead of .....amazonaws.com/
+- default root (e.g. index.html) is the main path if none is specified
+- you can select the region limits where your content is accessible
+
+
+#### Amazon Elastic Transcoder
+- media transcoding in the cloud
+- HLS (HTTP Live Streaming) streaming can adapt to the network speed
+- pipeline to transcode a file
+- a master playlist can be created which will contain all streams, depending on the bitrate the best will be selected
+- depending on the S3 bucket location (upload/download) and the cloudfront location we can obtain the full path to our files (used for testing mainly)
 
 #### CloudWatch
 - monitoring (ELB) dashboard
@@ -50,6 +71,7 @@ tags: [tutorial, 2015]
     - one or more buckets in the system
     - access control to buckets, access logs and regions can be configured/set
 - Permissions can be set as JSON (not very convenient, but there are some examples)
+    - by default all objects/buckets are private
 - Static Website Hosting (endpoint - Endpoint: webapplication-site-9988.s3-website-us-east-1.amazonaws.com)
 - Enable CORS (Cross-Origin Resource Sharing)
     - for JS, "wide array of configrations options"
