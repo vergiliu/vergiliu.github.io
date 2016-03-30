@@ -33,6 +33,11 @@ tags: [tutorial, 2015]
     - one-time request remains active until instance terminates, request expires, or request is cancelled
         - persistent requests remain active until expired or cancelled
     - in the last step of the request you can see current prices depending on the AZ selected
+- windows host + iis  169.254.169.254/latest/meta-data/mac
+- Security Groups
+    - if your Security Groups are not in a VPC, you're using EC2 classic
+    - "all things" are accessible through the API, e.g. get security groups, VPC id, instances where applied, all rules IN/OUT for a SecGroup
+    - for example, with the SDK for various programming languages we can create a simple dashboard to monitor all the VPCs and SecGroups
 
 #### CloudFront
 - content delivery web service, accelerated delivery of content through Amazon edge locations
@@ -244,6 +249,14 @@ tags: [tutorial, 2015]
         - also a private security group for communication inside the private Network
     - add an Output section
 - to delete the stack we need to DISABLE termination protection in the EC2 for the NAT instance
+
+#### CodeCommit
+- create secure repositories for sharing code in the cloud :)
+- Create triggers that will send an email or connect to a webhook through Amazon Simple Notification Service (SNS)
+    - or run your custom integrations through AWS Lambda
+- using AWS IAM, storage is S3 and DynamoDB
+- unlimited repos and files
+
 
 ### Advanced topics
 
