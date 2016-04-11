@@ -6,6 +6,7 @@ categories: [books, reviews]
 tags: [books, reviews, 2015]
 ---
 Local git commands:
+
 - git branch newBranchName
 - git checkout moveToThisBranch
 - one can go "up the tree" w/ git checkout HEAD^ repeatedly
@@ -28,6 +29,7 @@ Local git commands:
     - tagName_numberOfCommits_gHashOfDescribedCommit
 
 Remote git commands:
+
 - git clone
 - git fetch, gets remote changes and updates where the local repo points to, but it will not update the local repo
     - it will not change anything in the local
@@ -50,4 +52,5 @@ Remote git commands:
     - -b local_name, -u remote branch name (can be omitted if on that branch currently)
 
 Other commands:
+
 - git bisect, searching through history
