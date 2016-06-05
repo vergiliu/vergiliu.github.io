@@ -1,12 +1,10 @@
 ---
 layout: post
-title: "Give and Take"
+title: "Give and Take: A Revolutionary Approach"
 date: 2015-05-01 22:22:22
 categories: [books, reviews]
 tags: [books, reviews, 2016]
 ---
-
-#### Give and Take: A Revolutionary Approach
 
 In this book the author is trying to convene to us information about psychology and the types of people matching those profiles that he will describe.
 First of all there are three types of people that he divides all people into: the givers, the takers, and the matchers.
