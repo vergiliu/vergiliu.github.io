@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "Learning Python"
+title: "Learning Python 5th edition (ebook) by David Ascher and Mark Lutz"
 date: 2015-08-15 22:22:22
 started_on: 2013-11-15
 categories: [4stars, books, reviews, 2015]
 tags: [books, reviews, 2015]
+rating: 4
 ---
-`Learning Python 5th edition (ebook) by David Ascher and Mark Lutz`
 
 I'll start by saying this is a massive book, covering so many things that's hard to go through it cover-to-cover without forgetting or missing out on stuff.
 Overall the book is excellent but we always need to keep in mind it's "the book over Python" so no matter how big it is, it will always skimp on something.
 
-Rating 4/5
+Rating 4/5 - just of its sheer size, otherwise an excellent book
 
 #### Chapter1-4
 - basic intro, running scripts, exec, open, reload
@@ -96,7 +96,7 @@ Rating 4/5
 - zip() or map(); keys = [], values = [] => **`D = dict(zip(keys, values))`**
 - for (off, item) in enumerate('iterable'): ...
 
-####Chapter 14-17 - Iterators, Scope, ...
+#### Chapter 14-17 - Iterators, Scope, ...
 - iterator, any object which exposes \_\_next\_\_() and raises StopIteration at end of results
     - iterator object (\_\_next\_\_) or iterable object(\_\_iter\_\_)
     - files have their own iterators
@@ -117,7 +117,7 @@ Rating 4/5
 - factory functions / closures ; lambda's
 - nonlocal - a name that can be changed in an enclosing scope
 
-####Chapter 18 - Arguments
+#### Chapter 18 - Arguments
 - positional arguments matched from left to right
 - keywords matched using the parameters names
 - use \* or \*\* varargs to match any number of parameters as tuples (positional) or dictionaries (keyword)
@@ -139,7 +139,7 @@ Rating 4/5
   - as in Python3 file is iterable [line.rstrip() for line in open('file')] == list(map(lambda line: line.rstrip(), open('file')))
 - the _timeit_ module used for time length statistics of function calls, pystones
 
-####Chapter 22-25 - Modules/Packages/Advanced Modules
+#### Chapter 22-25 - Modules/Packages/Advanced Modules
 - modules are imported only once per session, so in interactive mode you need to use `reload` instead of just calling import again
 - we can use .pth files to define other paths where Python can search for modules
 - prefer `import` over `from`, when working with modules but no strong preference is given to import
@@ -169,7 +169,7 @@ Rating 4/5
 - The path feature which allows. Pth extension files, to define extra paths to search for modules
 - You can get current path setup with sys. Path
 
-####Chapter 26: OOP
+#### Chapter 26: OOP
 - multiple inheritance is possible
 - referring to current object (`this` - equivalent) is done by using the `self` keyword
 - \_\_init\_\_ method used as a constructor, class name(inherit_1, inherit_2) using LtR order of precedence
@@ -185,7 +185,6 @@ Rating 4/5
     - pickled classes must be importable
 - shelve module provides extra layer that allows storing of objects by key
     - import shelve, open new shelve db = shelve.open('file') then we can call db[key] = object_name
-- ch29
 
 #### Chapter 30-31: operator overloading and oop techniques
 - many operations can be overloaded, i.e. \_\_len/add/bool/lt/gt/iter\_\_
@@ -214,7 +213,7 @@ def __str__(self):
     return "Instance of %s, address %s: %s" %  (self.__class__.__name__,id(self),self.__attrnames())
 {% endhighlight %}
 
-#### ch 32: advanced class topics
+#### Ch 32: advanced class topics
 - new style classes
     - classes and types are merged
     - object serves as root for all classes
@@ -289,7 +288,6 @@ def address(self):
 @def address(self, value):
     self._address = value
 {% endhighlight %}
-
 - descriptors provide an alternative way to intercept attributes access
     - it allows to route a specific attribute operation to a methods from a different class
 
@@ -313,3 +311,4 @@ print(a + b + c)         # spam = tracer(spam) # Wraps spam in a decorator objec
 {% endhighlight %}
 
 #### Metaclasses - ch 40
+- :)
