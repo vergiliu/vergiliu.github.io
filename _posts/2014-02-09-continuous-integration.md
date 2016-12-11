@@ -4,6 +4,7 @@ title:  "Continuous Integration"
 date:   2014-02-09 18:59:59
 categories: [books, reviews]
 tags: [books, reviews, 2014]
+rating: 4
 ---
 
 This "whole reviewing thing" turns out to be more challenging than initially expected, I would like to make more time doing this, but it's definitely enjoyable and I find it a wonderful way of honing one's abilites (in my case very limited) to write. So, on with the show.

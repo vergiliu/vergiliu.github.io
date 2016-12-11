@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Don't Make me Think"
+title: "Don't Make Me Think by Steve Krug"
 date: 2013-01-01 22:22:22
 categories: [books, reviews]
 tags: [books, reviews, 2013]
+rating: 5
 ---
-`Don't Make Me Think by Steve Krug`
 The "bible" of web usability in its second incarnation. A couple of ideas or take-aways from the book:
 
 + Make the site natural to the user and his actions

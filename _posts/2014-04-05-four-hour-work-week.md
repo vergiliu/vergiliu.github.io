@@ -4,6 +4,7 @@ title:  "4 Hour Work Week"
 date:   2014-04-05 18:59:59
 categories: [books, reviews]
 tags: [books, reviews, 2014]
+rating: 3
 ---
 
 I was really eager to get my hands on the `4 Hour Work Week by T. Ferriss` book, and some friends thought it would be a nice gift - thanks guys.

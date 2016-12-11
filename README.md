@@ -1,3 +1,4 @@
 vergiliu.github.io
 ==================
-add some text
+
+Reviews of books, and rants about things ... mainly
