@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "Fahrenheit 451"
+title: "Fahrenheit 451 - Ray Bradbury"
 date: 2016-04-20 12:22:22
 categories: [books, reviews]
 tags: [books, reviews, 2016]
+rating: 3
 ---
-
-#### Ray Bradbury - Fahrenheit 451
 
 An utopic future, where firefighters don't try to put out fires, but instead... burn books.
 
