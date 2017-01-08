@@ -11,6 +11,12 @@ Not too many extra things to say :smile:
 
 [Twitter](https://twitter.com/{{ site.author.name }})
 
+TODO use other favicon
+
+TODO updated highlights areas
+
+TODO improve font sizes, change colors
+
 ---
 
 # Theme [GitHub](https://github.com/poole/hyde)
