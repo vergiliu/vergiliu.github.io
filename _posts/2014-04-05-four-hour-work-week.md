@@ -2,7 +2,6 @@
 layout: post
 title:  "4 Hour Work Week"
 date:   2014-04-05 18:59:59
-
 tags: [books, reviews, 2014]
 rating: 3
 ---
@@ -17,8 +16,6 @@ There are also a couple of good resources on SEO, promoting your website and get
 
 Other than some, let's call them, more exotic ideas of how to do stuff, I am fully on board with what the author is promoting. Reading between the lines and looking at what he calls the "New Rich" way of life is what the the whole society should strive for:
 working more efficiently, and focusing (at least) some of your energy and time on things you find uplifting and really love to do - being your own project or your family.
-
-Rating 3/5
 
 As usual, you can find the book on [Amazon] or [Goodreads], if you're looking for more information.
 

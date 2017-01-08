@@ -13,8 +13,6 @@ What I would say that I found surprising is that the faith of the characters see
 Lots of references to Star Trek and the first science based TV series aired and a lot of fun to read, even though it falls short of being a great fiction book.
 I would nonetheless recommend it, for the easy and short read and overall funny writing style.
 
-Rating 3/5
-
 
 | Apple | [iTunes] |
 | Google   | [Play] |

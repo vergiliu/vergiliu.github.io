@@ -2,7 +2,6 @@
 layout: post
 title:  "Continuous Integration"
 date:   2014-02-09 18:59:59
-
 tags: [books, reviews, 2014]
 rating: 4
 ---
@@ -17,7 +16,6 @@ I would recommend this book for everyone who needs to have an introduction to th
 
 > _"How reliable do you want your software to be? Source code is only as reliable as the test coverage, and tests are only as valuabe as their execution frequency. By segregating tests into four automatable categories mapping to unit, component, system and functional, a CI system can be configured to execute tests in an efficient manner."_
 
-Rating 4/5
 
 [Amazon]: http://www.amazon.com/Continuous-Integration-Improving-Software-Reducing/dp/0321336380
 [Goodreads]: http://www.goodreads.com/book/show/1311542.Continuous_Integration

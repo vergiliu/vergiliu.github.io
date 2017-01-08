@@ -23,5 +23,3 @@ The "bible" of web usability in its second incarnation. A couple of ideas or tak
 + try to involve different people from different teams in order to get more traction and involvement during the (usability) testing
 + ask the tester to do some specific tasks besides
 + After the walkthroughs review/go over the notes as soon as possible
-
-Rating 5/5

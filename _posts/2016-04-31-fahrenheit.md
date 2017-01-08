@@ -13,5 +13,3 @@ And now, some quotes that caught my eye:
 
  >"There must be something in the books, things we can't imagine, to make a woman stay in a burning house; there must be something there. You don't stay for nothing."
  >"The sun burned every day. It burned Time."
-
-Rating 3/5

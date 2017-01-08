@@ -13,7 +13,5 @@ Check out this awesome book [on Amazon] and [Wikipedia] for more info.
 
 "Our technology plan cannot call for any technological breakthroughs on the path critical for the  project's success. Historically, disruptive technologies involve no new technologies; rather, they  consist of components built around proven technologies and put together in a novel product architecture that offers the customer a set of attributes never before available."
 
-Rating 5/5
-
 [on Amazon]: http://www.amazon.com/The-Innovators-Dilemma-Revolutionary-Business/dp/0062060244
 [Wikipedia]: http://en.wikipedia.org/wiki/The_Innovator's_Dilemma
