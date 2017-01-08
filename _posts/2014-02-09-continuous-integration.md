@@ -2,7 +2,7 @@
 layout: post
 title:  "Continuous Integration"
 date:   2014-02-09 18:59:59
-categories: [books, reviews]
+
 tags: [books, reviews, 2014]
 rating: 4
 ---

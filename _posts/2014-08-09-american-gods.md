@@ -2,7 +2,7 @@
 layout: post
 title:  "American Gods by Neil Gaiman"
 date:   2014-08-09 19:00:00
-categories: [books, reviews]
+
 tags: [books, reviews, 2014]
 ---
 In the rather interesting and much acclaimed book `American Gods`  the author touches on many interesting ideas about old and new gods.

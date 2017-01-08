@@ -3,8 +3,7 @@ layout: post
 title: "Maven by Example"
 date: 2015-02-28 22:22:22
 started_on: 2015-02-02
-categories: books
-tags: books, java, maven, 2015
+tags: [books, java, maven, 2015]
 ---
 Maven by Example
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Old others"
 date: 2000-01-01 02:22:22
-categories: [reviews, unfinished]
+
 tags: [reviews]
 ---
 

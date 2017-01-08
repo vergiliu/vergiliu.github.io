@@ -2,8 +2,7 @@
 layout: post
 title: "Welcome to Jekyll!"
 date: 2013-12-29 22:29:48
-categories: jekyll
-tags: learning
+tags: [learning]
 ---
 
 New file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.md

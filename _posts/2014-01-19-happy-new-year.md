@@ -2,7 +2,6 @@
 layout: post
 title:  "Happy new year!"
 date:   2014-01-19 14:45:00
-categories: books
 tags: [books, reviews, 2014]
 ---
 

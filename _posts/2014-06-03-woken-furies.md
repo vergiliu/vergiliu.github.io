@@ -2,7 +2,7 @@
 layout: post
 title:  "Woken Furies by Richard Morgan"
 date:   2014-06-03 19:00:00
-categories: [books, reviews]
+
 tags: [books, reviews, 2014]
 rating: 5
 ---

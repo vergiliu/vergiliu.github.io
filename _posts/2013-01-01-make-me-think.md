@@ -2,7 +2,7 @@
 layout: post
 title: "Don't Make Me Think by Steve Krug"
 date: 2013-01-01 22:22:22
-categories: [books, reviews]
+
 tags: [books, reviews, 2013]
 rating: 5
 ---

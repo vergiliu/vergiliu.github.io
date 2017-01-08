@@ -3,7 +3,6 @@ layout: post
 title: "Learning Python 5th edition (ebook) by David Ascher and Mark Lutz"
 date: 2015-08-15 22:22:22
 started_on: 2013-11-15
-categories: [4stars, books, reviews, 2015]
 tags: [books, reviews, 2015]
 rating: 4
 ---

@@ -2,7 +2,6 @@
 layout: post
 title: "Flash Boys"
 date: 2015-02-02 22:22:22
-categories: [books, reviews]
 tags: [5stars, books, reviews, 2015]
 rating: 5
 ---

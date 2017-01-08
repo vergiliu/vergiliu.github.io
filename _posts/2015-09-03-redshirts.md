@@ -2,7 +2,6 @@
 layout: post
 title: "Redshirts"
 date: 2015-09-02 23:45:00
-categories: [books, reviews]
 tags: [books, reviews, 2015]
 rating: 3
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Fahrenheit 451 - Ray Bradbury"
 date: 2016-04-20 12:22:22
-categories: [books, reviews]
+
 tags: [books, reviews, 2016]
 rating: 3
 ---

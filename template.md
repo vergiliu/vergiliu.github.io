@@ -2,7 +2,6 @@
 layout: post
 title: "Title_of_post"
 date: 2015-12-31 23:45:00
-categories: [books, video, reviews, tutorials, articles]
 tags: [books, video, reviews, 2015]
 ---
 

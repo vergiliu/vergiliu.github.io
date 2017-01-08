@@ -2,7 +2,6 @@
 layout: post
 title: "Slaughterhouse Five"
 date: 2015-03-31 22:22:22
-categories: [books, reviews]
 tags: [books, reviews, 2015]
 ---
 `Slaughterhouse Five by Kurt Vonnegut`

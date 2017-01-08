@@ -13,7 +13,7 @@ Not too many extra things to say :smile:
 
 ---
 
-# Theme
+# Theme [GitHub](https://github.com/poole/hyde)
 ### Released under MIT License
 
 Copyright (c) 2013 Mark Otto.

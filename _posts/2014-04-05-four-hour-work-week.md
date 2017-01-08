@@ -2,7 +2,7 @@
 layout: post
 title:  "4 Hour Work Week"
 date:   2014-04-05 18:59:59
-categories: [books, reviews]
+
 tags: [books, reviews, 2014]
 rating: 3
 ---
