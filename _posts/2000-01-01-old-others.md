@@ -2,13 +2,12 @@
 layout: post
 title: "Old others"
 date: 2000-01-01 02:22:22
-
 tags: [reviews]
 ---
 
 1. Starting Strength :)
 
-2. Scala 
+2. Scala
     ##### Week1
     - function definition `def functionName(variable: Type): ReturnType = { /*function content*/}`
     - call by name vs call by value
