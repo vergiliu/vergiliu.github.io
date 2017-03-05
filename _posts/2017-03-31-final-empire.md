@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Final Empire by Brian Sanderson"
+title: "The Final Empire by Brandon Sanderson"
 date: 2017-03-31 22:22:22
 tags: [books, reviews, 2017]
 rating: 5
@@ -16,4 +16,4 @@ _might contain spoilers_
 As any story, it has its quirks - and I must confess at this point I didn't even finish the book - but the whole falling in love feels a bit forced, although I must admit not entirely impossible.
 In a nut shell the action revolves around a bunch of characters - Vin, an unimportant thieving crew member and Kelsier, the survivor of some horrible secret mines - where
 
-Allomancy - 
+Allomancy -
