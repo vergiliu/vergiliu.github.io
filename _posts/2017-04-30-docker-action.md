@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Docker in Action by Jeff Nickoloff"
-date: 2017-06-31 22:22:22
+date: 2017-04-30 22:22:22
 tags: [books, reviews, 2017]
-rating: na
+rating: 4
 ---
 
 For some time I wanted to get a more thorough intro to Docker, and getting some sort of coherent thoughts - besides the obvious "read the docs" - is welcome.
 
-I will skim over some of the background information, even though useful, and focus more on the overall commands and concepts, in some cases at least:
+I will skim over some of the background information, even though useful, and focus more on the overall commands and concepts, in some cases at least :)
 
 ##### `docker help` - always useful
 
@@ -37,6 +37,14 @@ I will skim over some of the background information, even though useful, and foc
 - output can be captured and used in other scripts, 128 bit hash of running instance when starting up is output to console
 - containers can be automatically restarted, by using a _supervisor or init process_ which can monitor other processes in the container
 
+##### `docker stop <name/id>` - stop container
+    - `-f` flag will send SIGKILL instead of SIGHUP
+- `docker rm <name/id>` - remove contaier from host
+- `docker commit -a <sign_author_string> -m <message>` to create a image from a modified container
+- docker tag can be used to assign tags to existing images
+- docker inspect image to find out more details about the image
+
+##### other commands
 - `docker ps` - show running containers
 - `docker restart <name>` - well, yeah
 - `docker logs <container>` - show logs
@@ -45,14 +53,7 @@ I will skim over some of the background information, even though useful, and foc
 - `docker export --output <file>.tar <name>` - get a flattened copy of the current <name>
 - `docker history <image>` - will give you all the changes done to the UFS
 
-##### `docker stop <name/id>` - stop container
-    - `-f` flag will send SIGKILL instead of SIGHUP
-- `docker rm <name/id>` - remove contaier from host
-- `docker commit -a <sign_author_string> -m <message>` to create a image from a modified container
-- docker tag can be used to assign tags to existing images
-- docker inspect image to find out more details about the image
-
-Other notes:
+##### Notes:
 - volumes represent a simple way to share images between containers or hosts
 - there are 3 types of networking in case of containers: closed (no access), bridged (default) - communication goes through the Docker bridge virtual interface, and joined where the containers share the network stack
 - if multiple settings need to be set, e.g. more ports mapped, duplicate the flag like --port 80:80 --port 8080:8080
