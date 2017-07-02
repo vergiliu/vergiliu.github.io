@@ -2,7 +2,7 @@
 layout: post
 title: "The Final Empire by Brandon Sanderson"
 date: 2017-03-31 22:22:22
-tags: [books, reviews, 2017]
+tags: [books, reviews, 2017, 5stars]
 rating: 5
 ---
 
