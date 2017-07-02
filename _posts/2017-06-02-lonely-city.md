@@ -5,3 +5,5 @@ date: 2017-05-06 22:22:22
 tags: [books, reviews, 2017]
 rating: 4
 ---
+
+For once a different topic book
