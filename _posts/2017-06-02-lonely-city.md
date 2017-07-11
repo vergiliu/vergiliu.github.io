@@ -15,4 +15,6 @@ The _Nighthawks_ painting by Hopper is presented as a perfect example of the pow
 Next, she's looking at Andy Warhol's art as a means to express similar feelings in a somewhat different medium.
 David Wojnarowicz is next on the shortlist, this paragraph struck me rather unexpected:
 
-> "'In my home', he wrote in his memoir `Close to knives`, 'one could not laugh, one could not express boredom, one could not cry, noe could not play, one could not engage in any activity that showed development or growth that was independet'Fear contaminates everything.' [...] Fear contaminates everything. He remebered playing chicken with the trucks that came over the hill by his house"
+> 'In my home', he wrote in his memoir `Close to knives`, 'one could not laugh, one could not express boredom, one could not cry, one could not play, one could not engage in any activity that showed development or growth that was independent' 
+
+> Fear contaminates everything. He remembered playing chicken with the trucks that came over the hill by his house [...]
