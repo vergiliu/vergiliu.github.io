@@ -1,3 +1,4 @@
+---
 layout: post
 title: "Terms of Enlistment by Marko Kloos"
 date: 2017-08-02 22:22:22
