@@ -5,6 +5,7 @@ date:   2014-06-03 19:00:00
 tags: [books, reviews, 2014]
 rating: 5
 ---
+
 In the last installment of the Takeshi Kovacs series, we whole universe built around the possibility of transferring your mind in a synthetic body.
 As the volume is a wee bit longer than the others, more times goes into details, background story and expanding between the connections between the characters and the environment. This makes it a longer read, but the readers familiar with the environment will find more enjoyable and the story will be even more enticing than before. And again, as more space is devoted to everything we will get more insights into the spirits of the protagonist and on the implications of their actions.
 

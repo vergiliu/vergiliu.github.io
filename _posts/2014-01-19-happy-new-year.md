@@ -1,13 +1,15 @@
 ---
 layout: post
-title:  "Happy new year!"
+title:  "The Innovator's Dillemma"
 date:   2014-01-19 14:45:00
 tags: [books, reviews, 2014]
 ---
 
+#### Happy new year!
+
 First of all, Happy New Year to everyone.
 
-Next, I've read a great book `The Innovator's Dillemma` which goes on an incursion into the challenges big companies face when disruptive technologies and other players go head to head with the established ones. By trying to cover a lower end of the market with lower returns they slowly move up the market and start to take out profits from the upper class players. Examples cover the somewhat fast moving disk drives industries going from 14" to 8", 5.25", 3.25" or from excavators and motorcycle companies. I saw parts of the author's ideas sort of a precursor for all the agile and fast-moving start-ups approach to software and hardware development in these days and times.
+Next, I've read a great book `` which goes on an incursion into the challenges big companies face when disruptive technologies and other players go head to head with the established ones. By trying to cover a lower end of the market with lower returns they slowly move up the market and start to take out profits from the upper class players. Examples cover the somewhat fast moving disk drives industries going from 14" to 8", 5.25", 3.25" or from excavators and motorcycle companies. I saw parts of the author's ideas sort of a precursor for all the agile and fast-moving start-ups approach to software and hardware development in these days and times.
 
 Check out this awesome book [on Amazon] and [Wikipedia] for more info.
 
