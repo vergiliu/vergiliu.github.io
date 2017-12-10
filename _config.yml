@@ -26,7 +26,7 @@ author:
 paginate:         20
 
 # Custom vars
-version:          2017.11.0
+version:          2017.12.0
 
 github:
   repo:           https://github.com/vergiliu
