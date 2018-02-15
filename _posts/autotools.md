@@ -9,6 +9,8 @@ rating: na
 Make
 - automatic variables
 - $@ refers to the full target name of the current target
+- $(MAKE) refers to main make
+- '-' before commands ignores the exit code
 - Targets are not always files. They can also be so-called phony targets, as in the case of all and clean.
 ```{bash}
 objects =  display.o
@@ -19,4 +21,5 @@ fud: baz.c
     sources=baz.c; gcc -o fud $${sources}
 all clean:
     cd src && $(MAKE) $@
+    -rm $(distdir).tar.gz >/dev/null 2>&1
 ```
