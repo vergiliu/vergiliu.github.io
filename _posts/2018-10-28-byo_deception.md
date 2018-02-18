@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "By Way of Deception by "
-date: 2017-11-01 22:22:22
+date: 2017-10-28 22:22:22
 tags: [books, reviews, 2017]
-rating:
+rating: 2
 ---
 
 The first 3rd of the book is good, well thought out and put together, with a solid story line presenting the moment of finding out and bombing a secret place where uranium was enriched and getting us started in the recruiting and so-called trial period for the secret agents of Mossad.
