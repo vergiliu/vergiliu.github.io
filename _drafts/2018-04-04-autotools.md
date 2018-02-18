@@ -38,3 +38,12 @@ export bindir
     - users can then easily override them, e.g. `make prefix=/usr install`
 - remember that `make CC=gcc3` is not the same as `CC=gcc3 make` as the 1st case is overriding Makefile variables, whereas the 2nd is just declaring shell variables
     - "in general, it's better to set make variables on the make command line"
+
+Libtool
+- if interface is updated, 2 versions of same library (shared) can be installed in the same location
+- there are 3 possible forms for shared libraries references resolved by the linker
+    - Dynamic Linking at Load Time - users can override the shared libraries by exporting LD_PRELOAD, case in which, the symbols can be referenced from a different pre-loaded library which might overwrite/replace functionality in the wished library - e.g. malloc with logging for troubleshooting memory allocation issues
+    - Automatic Dynamic Linking at Load Time aka lazy-loading, where the process will stop if at the moment of using the library it cannot find its symbols
+    - Manual Dynamic Linking at RUntime - where the programmer takes care of opening (dlopen) and loading the symbols (dlsym) of a shared library, and possibly handling errors in case things go wrong
+- Libtool provides a shared library called ltdl - it provides an abstraction for manual dynamic linking between shared-library and non–shared-library platforms
+    - "Remember that calling a routine in a static library has the same effect as linking the object code for the called routine right into the calling program. The called routine ultimately becomes an integral part of the calling binary image"
