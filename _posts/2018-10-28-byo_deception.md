@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "By Way of Deception by "
+title: "By Way of Deception by Victor Ostrovsky"
 date: 2017-10-28 22:22:22
 tags: [books, reviews, 2017]
 rating: 2
