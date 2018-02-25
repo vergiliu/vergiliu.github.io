@@ -28,6 +28,7 @@ paginate:         20
 # Custom vars
 version:          2018.02.1
 
+gitlab:
+  repo:           https://gitlab.com/vergiliu
 github:
   repo:           https://github.com/vergiliu
-  repo:           https://gitlab.com/vergiliu
