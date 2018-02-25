@@ -11,7 +11,7 @@ permalink:        pretty
 relative_permalinks: false
 
 # site
-#url:              http://localhost:4000
+url:              "/"
 title:            rants and reviews
 tagline:          'rants and reviews'
 description:      "Online scratchpad for jotting down some ideas I've liked throughout the books I've read. And reviews, and other stuff as well"
