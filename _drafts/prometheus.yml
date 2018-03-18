@@ -1,0 +1,36 @@
+---
+layout: post
+title: "Prometheus"
+date: 2018-06-31 22:22:22
+tags: [tutorials, Prometheus, 2018]
+---
+#### Prometheus
+##### Configuration
+- relabel instances (aka remove ports)
+```YAML
+relabel_configs:
+  - source_labels: [__address__]
+    target_label:  instance
+    regex: ^(localhost):9100*
+    replacement: mac-${1}
+
+  - source_labels: [__address__]
+    target_label:  instance
+    regex: ^.*:9091
+    replacement: pushgw
+```
+
+#### Alerting (for version 2.x)
+```YAML
+groups:
+- name: host
+  rules:
+
+  - alert: test_new_cpu
+    expr:  (100 * (1 - avg by(job)(irate(node_cpu{mode='idle'}[1m])))) > 20
+    annotations:
+      summary: "Instance {{ $labels.instance }} CPU usage is dangerously high"
+      description: "This device's CPU usage has exceeded the threshold with a value of {{ $value }}."
+    labels:
+      severity: warning
+```
