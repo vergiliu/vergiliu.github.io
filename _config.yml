@@ -23,10 +23,10 @@ author:
   name:           Vergiliu
   url:            https://twitter.com/vergiliu
 
-paginate:         20
+paginate:         25
 
 # Custom vars
-version:          2018.03.1
+version:          2018.04.0
 
 gitlab:
   repo:           https://gitlab.com/vergiliu
