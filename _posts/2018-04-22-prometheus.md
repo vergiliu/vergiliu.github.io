@@ -11,7 +11,7 @@ tags: [tutorials, Prometheus, 2018]
 ##### Configuration
 - relabel instances (aka remove ports) - in main Prometheus YAML file
 
-```YAML
+```yaml
 scrape_configs:
     - job_name: 'prometheus'
       static_configs:
@@ -30,14 +30,14 @@ scrape_configs:
 #### Alerting (for version 2.x)
 - Alert rules configuration - in main Prometheus YAML file
 
-```YAML
+```yaml
 rule_files:
     - "rules/test.rules"
 ```
 
 - the `test.rules` file
 
-```YAML
+```yaml
 groups:
 - name: host
   rules:
@@ -62,7 +62,7 @@ groups:
 
 - Alert configuration in Alertmanager
 
-```YAML
+```yaml
 route:
     receiver: default
     routes:
