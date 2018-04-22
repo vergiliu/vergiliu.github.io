@@ -5,6 +5,7 @@ date: 2018-04-22 22:22:22
 tags: [tutorials, Prometheus, 2018]
 ---
 #### Prometheus
+- for live reload either enable `--web.enable-lifecycle` when starting up and then `curl -X POST localhost:9090/-/reload` or `kill -1 $prometheus_PID` send SIGHUP
 ##### Configuration
 
 - relabel instances (aka remove ports) - in main Prometheus YAML file
@@ -36,13 +37,22 @@ groups:
 - name: host
   rules:
 
-  - alert: test_new_cpu
-    expr:  (100 * (1 - avg by(job)(irate(node_cpu{mode='idle'}[1m])))) > 20
+  - alert: idle_below_30pct
+    expr:  (100 * (1 - avg by(job)(irate(node_cpu{mode='idle'}[1m])))) < 30
     annotations:
       summary: "Instance {{ $labels.instance }} CPU usage is dangerously high"
-      description: "This device's CPU usage has exceeded the threshold with a value of {{ $value }}."
+      description: "{{ $labels.instance }} is using a LOT of CPU. CPU usage is {{ humanize $value}}%."
     labels:
       severity: warning
+
+  - alert: low_disk_space_root
+    expr: node_filesystem_avail{mountpoint="/"} < 50_000_000_000
+    annotations:
+        summary: "Instance {{ $labels.instance }} disk {{ $device }} is low on space"
+        description: "Description disk {{ $labels.instance }} is at {{ humanize $value }}B"
+    labels:
+        group: storage
+        severity: critical
 ```
 - Alert configuration in Alertmanager
 ```YAML
