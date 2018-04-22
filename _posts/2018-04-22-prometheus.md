@@ -5,10 +5,12 @@ date: 2018-04-22 22:22:22
 tags: [tutorials, Prometheus, 2018]
 ---
 #### Prometheus
-- for live reload either enable `--web.enable-lifecycle` when starting up and then `curl -X POST localhost:9090/-/reload` or `kill -1 $prometheus_PID` send SIGHUP
-##### Configuration
+- for live reload either enable `--web.enable-lifecycle` when starting up and then `curl -X POST localhost:9090/-/reload` _or_
+- `kill -1 $prometheus_PID` send SIGHUP
 
+##### Configuration
 - relabel instances (aka remove ports) - in main Prometheus YAML file
+
 ```YAML
 scrape_configs:
     - job_name: 'prometheus'
@@ -27,11 +29,14 @@ scrape_configs:
 
 #### Alerting (for version 2.x)
 - Alert rules configuration - in main Prometheus YAML file
+
 ```YAML
 rule_files:
     - "rules/test.rules"
 ```
+
 - the `test.rules` file
+
 ```YAML
 groups:
 - name: host
@@ -54,7 +59,9 @@ groups:
         group: storage
         severity: critical
 ```
+
 - Alert configuration in Alertmanager
+
 ```YAML
 route:
     receiver: default
