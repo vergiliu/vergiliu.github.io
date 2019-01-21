@@ -26,6 +26,7 @@ author:
 paginate:         25
 
 # Custom vars
+
 version:          2019.01.0
 
 gitlab:
