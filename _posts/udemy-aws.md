@@ -71,6 +71,10 @@ rating: na
   - once you enable it, can only be suspended
   - integrates with Lifecycle rules
   - integrates with MFA Delete
+- S3 lifecycle rules
+  - can be used in conjuction with versioning, and applied to current and previous versions
+  - automate transitions to different tiers of storage
+  - transition and expiration to XX from YY after number of days
 ### Database
 ### Security, Identity & Compliance
 ### Network & Content Delivery
