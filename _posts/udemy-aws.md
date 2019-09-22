@@ -32,8 +32,45 @@ rating: na
 - password policies and rotation can be configured
 - policies can be AWS or customer-managed
 
+- CloudWatch can manage/create billing alarms
+
 ### Compute
+
 ### Storage
+####  S3 - simple storage service
+- **read S3 FAQ before exam**
+- object storage, unlimited
+- 0 bytes to 5TB, stored in buckets
+- https://s3-eu-west-1.amazonaws.com/<bucketname>
+- buckets must be unique globally (universal name), http200 when upload ok
+  - object: key (name), value (file data), versionId, metadata
+  - Subresources
+    - ACL , torrent
+  - Consistency
+    - read after write consistency for PUTs
+    - eventual consistency for overwrite PUTs and DELETEs
+- MFA delete protection can be set up
+- built for 4 9s availability, guaranteed 3 9s; 11 9s durability
+- charges: Storage, Requests, Storage Mgmt, Data transfer, Transfer Acceleration (CloudFront edge locations), Cross region replication
+- storage classes (tiers)
+  - S3 standard - can sustain loss of 3 facilities
+  - S3 Infrequent Access
+  - S3 One Zone IA (reduced redundancy storage)
+  - S3 Intelligent Tiering
+  - S3 Glacier - for data archiving
+  - S3 Glacier Deep Archive - 12hrs retrieval time
+- Control to buckets can be set using bucket policies 
+- by default all new buckets are private
+- ACL are at object level
+- encryption levels: in transit (HTTPS), at rest (server side)
+  - S3 managed keys SSE S3
+  - AWS KMS (Key Mgmt Service) SSE KMS
+  - server side with client keys SSE C
+- Version Control
+  - stores all versions, including writes
+  - once you enable it, can only be suspended
+  - integrates with Lifecycle rules
+  - integrates with MFA Delete
 ### Database
 ### Security, Identity & Compliance
 ### Network & Content Delivery
