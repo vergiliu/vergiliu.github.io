@@ -17,10 +17,20 @@ rating: na
 ### Identity Access Management (IAM)
 - manage users and level of access to the console
 - shared access, granular permissions, Identity Federation
-- MFA
+- MFA, password rotation policy
 - temporary access for users, if necessary
 - PCI DSS compliance
-- key terms: Users, Groups, Policies, Roles
+- key terms: Users, Groups, Policies (made from polici documents, JSON), Roles
+- custom sign in domain
+- IAM settings are all global
+- best practice is to not directly use root account/"god mode"
+- roles - allow one  service to use another service e.g. EC2 instance can use S3
+- new users have no permissions when created 
+  - key and secret ID for programmatic access
+  - user/password for console access, different than keys mentioned above
+  - only visible once, make sure not to loose them
+- password policies and rotation can be configured
+- policies can be AWS or customer-managed
 
 ### Compute
 ### Storage
