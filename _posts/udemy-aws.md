@@ -2,7 +2,7 @@
 layout: post
 title: "AWS (Solutions Architect Associate) by CloudGuru"
 date: 2017-06-01 22:22:22
-tags: [video, reviews, 2017]
+tags: [video, reviews, 2017, 2019]
 rating: na
 ---
 
@@ -22,50 +22,51 @@ rating: na
 - PCI DSS compliance
 - key terms: Users, Groups, Policies (made from polici documents, JSON), Roles
 - custom sign in domain
-- IAM settings are all global
+- IAM settings are all global, does not apply to regions
 - best practice is to not directly use root account/"god mode"
 - roles - allow one  service to use another service e.g. EC2 instance can use S3
-- new users have no permissions when created 
-  - key and secret ID for programmatic access
+- new users have _NO_ permissions when created 
+  - key and secret ID assigned for programmatic access
   - user/password for console access, different than keys mentioned above
   - only visible once, make sure not to loose them
+- always setup MFA on your root account
 - password policies and rotation can be configured
 - policies can be AWS or customer-managed
-
 - CloudWatch can manage/create billing alarms
 
 ### Compute
 
-### Storage
-####  S3 - simple storage service
+####  S3 - Simple Storage Service
 - **read S3 FAQ before exam**
-- object storage, unlimited
+- object based storage, unlimited in size
 - 0 bytes to 5TB, stored in buckets
-- https://s3-eu-west-1.amazonaws.com/<bucketname>
+- example URL https://s3-eu-west-1.amazonaws.com/<bucketname>
 - buckets must be unique globally (universal name), http200 when upload ok
-  - object: key (name), value (file data), versionId, metadata
-  - Subresources
+  - an S3 object has: **key** (name), **value** (file data), **versionId**, **metadata**, and **Subresources**
     - ACL , torrent
-  - Consistency
+  - Consistency types for S3 objects
     - read after write consistency for PUTs
     - eventual consistency for overwrite PUTs and DELETEs
 - MFA delete protection can be set up
 - built for 4 9s availability, guaranteed 3 9s; 11 9s durability
 - charges: Storage, Requests, Storage Mgmt, Data transfer, Transfer Acceleration (CloudFront edge locations), Cross region replication
 - storage classes (tiers)
-  - S3 standard - can sustain loss of 3 facilities
-  - S3 Infrequent Access
+  - S3 standard - can sustain loss of 2 facilities
+  - S3 Infrequent Access (IA)
   - S3 One Zone IA (reduced redundancy storage)
   - S3 Intelligent Tiering
   - S3 Glacier - for data archiving
   - S3 Glacier Deep Archive - 12hrs retrieval time
 - Control to buckets can be set using bucket policies 
-- by default all new buckets are private
+- by default all new buckets are _private_
+- S3 buckets can be configured to store access logs from S3 buckets access
 - ACL are at object level
-- encryption levels: in transit (HTTPS), at rest (server side)
-  - S3 managed keys SSE S3
-  - AWS KMS (Key Mgmt Service) SSE KMS
-  - server side with client keys SSE C
+- encryption levels: -
+  - in transit (HTTPS), 
+  - at rest (server side)
+    - S3 managed keys SSE S3
+    - AWS KMS (Key Mgmt Service) SSE KMS
+    - server side with client keys SSE C
 - Version Control
   - stores all versions, including writes
   - once you enable it, can only be suspended
@@ -75,6 +76,42 @@ rating: na
   - can be used in conjuction with versioning, and applied to current and previous versions
   - automate transitions to different tiers of storage
   - transition and expiration to XX from YY after number of days
+- Cross Region Replication
+  - can be used only when versioning is enabled, on both source and replication buckets
+  - the replicated S3 can be in a different tier
+  - only changes after enabling CRR are visible in the replicated bucket
+    - files in existing bucket are not replicated automatically, all subsequent updates are recorded
+  - won't replicate delete markers nor deletes of _individual_ versions
+- Transfer Acceleration
+  - upload directly to Edge Location which in turn uploads to S3
+
+#### CloudFront
+  - it is a global service - CDN
+  - Edge Location - location where content will be cached - not an AZ nor Region
+  - Origin: ec2, elb, s3, route53 - origin of files distributed towards cdn
+  - Distribution (name of CDN): collection of edge locations, name given to the CDN; it can have 2 types
+    - Web - use for websites
+    - RTMP for streaming / Adobe something
+  - edge location can be written to (see transfer acceleration)
+  - objects are cached for TTL (time to leave), can be invalidated - you will be charged
+  - access can be restricted using sign URLs or cookies
+  - in a Distribution we can add `Invalidations` in case we want to no longer cache certain content/files/file types
+
+#### Snowball
+- PB-scale data transfer 50 80TB
+- Snowball edge 100TB
+- Import and Export large amounts of data to S3
+
+#### Storage Gateway
+- connects an on-premise software appliance with AWS storage infra
+- virtual (VMWare or Hyper-V) or physical device as a Storage Gateway
+- 3 types :
+  - File Gateway (NFS, SMB) -> flat files, S3
+  - Volume Gateway (iSCSI) -> EBS snapshots to S3
+    - Stored Volumes -> store your primary data locally (on site)
+    - Cached Volumes -> minimize the need of your local storage, only actively used data is stored -> stores data to S3
+  - Tape Gateway - Virtual Tape Library -> archive data to cloud, virtual tapes to S3; directly to Glacier or Deep 
+
 ### Database
 ### Security, Identity & Compliance
 ### Network & Content Delivery
