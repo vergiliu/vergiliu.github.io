@@ -7,6 +7,25 @@ rating: na
 ---
 
 ## 2019
+### EC2 (Elastic Compute Cloud)
+- pricing: on demand, reserved (1yr or 3yrs), spot, dedicated 
+- spot terminated will not be charged if terminated by Amazon
+- first launch AMI cannot be encrypted (root can be encrypted later )
+- on EBS backed, default action is to terminate and delete the volume
+- termination protection by default is OFF
+#### EC2 Security Groups
+- all changes to SGs take effect immediately
+- SG are stateful, all inbound rules are added automatically to outbound rules
+- we cannot blacklist a particular port or IP address
+- 1 or more SGs can be assigned to an instance
+- all inbound traffic (everything) is BLOCKED by default
+- all outbound traffic is ALLOWED
+- we can have any number of EC2 instances withing a single SG
+- we can have multiple SGs to a single EC2 instance
+- we can specifically ALLOW rules, but not DENY rules
+- NACL are stateless, port or IP address can be blocked in NACLs
+#### EBS (Elastic Block Store)
+
 ### Region > AZ
 - 19 regions & 57 AZs
 - AZ think of it as a DataCenter
@@ -33,6 +52,7 @@ rating: na
 - password policies and rotation can be configured
 - policies can be AWS or customer-managed
 - CloudWatch can manage/create billing alarms
+- SAML can give you federated SSO to AWS
 
 ### Compute
 
