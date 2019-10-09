@@ -13,6 +13,7 @@ rating: na
 - first launch AMI cannot be encrypted (root can be encrypted later )
 - on EBS backed, default action is to terminate and delete the volume
 - termination protection by default is OFF
+
 #### EC2 Security Groups
 - all changes to SGs take effect immediately
 - SG are stateful, all inbound rules are added automatically to outbound rules
@@ -24,7 +25,40 @@ rating: na
 - we can have multiple SGs to a single EC2 instance
 - we can specifically ALLOW rules, but not DENY rules
 - NACL are stateless, port or IP address can be blocked in NACLs
+
 #### EBS (Elastic Block Store)
+- persistent block storage
+- 5 different flavours: general purpose SSD (16000 iops) - gps, provisioned IOPS (64000 iops) SSD io1, throughput HDD (500 iopsa) st1, Cold HDD (250 iops), EBS Magnetic
+  - max size is 16TB
+- ebs volume always on same AZ as the ec2 instance
+- copy AMI to a different region by using snapshots
+- additional volumes will continue to persist on termination, root volume will be terminated
+- snapshots exist on S3, and are INCREMENTAL
+- AMIs can be created from both volumes and snapshots
+- you can change volume types on the fly
+- AMI based on Region / OS / Arch / Launch Permissions / Storage for root device: Instance Store (ephemeral) / EBS Backed Volumes
+  - EBS - from an EBS snapshot
+  - Instance Store - root device created from template stored in S3
+    - can be added only before startup of the AMI
+    - sometimes called ephermeral storage
+    - if instance is stopped, all data is lost
+- EBS backed instance will not lose data on stop
+- by default, both root volumes will be deleted on termination - for EBS backed the default can be changed
+
+##### Encrypted Root Device volumes and snapshots
+- an ec2 instance can be started with an encrypted root volume (new)
+- to encrypt a volume - take a snapshot of the volume, copy the volume and select ENCRYPT, next create an IMAGE out of the encrypted snapshot -> that can be launched as an encrypted AMI
+  - this cannot be launched as an unencrypted volume
+  - snapshots of this will be encrypted automatically
+  - volumes restored from encrypted snapshots are encrypted
+
+#### CloudWatch
+- monitors performance
+- 5 minute intervals by default (can be set to 1minute)
+- monitor service to check resources from AWS
+  - host level metrics, CPU, network, disk, status
+  - as well as applications
+- CloudTrail monitors API - it's more about auditing than performance
 
 ### Region > AZ
 - 19 regions & 57 AZs
