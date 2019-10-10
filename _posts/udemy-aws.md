@@ -13,6 +13,27 @@ rating: na
 - first launch AMI cannot be encrypted (root can be encrypted later )
 - on EBS backed, default action is to terminate and delete the volume
 - termination protection by default is OFF
+- **bootstrap scripts**
+  - during EC2 instance creation, a bootstrap script can be used to take various action on the instance
+- **instance metadata**
+  - `curl http://169.254.169.254/latest/meta-data` information about this instance
+  - `curl http://169.254.169.254/latest/user-data` information from bootstrap
+    - e.g. /local-ipv4 - local IP address
+    - or /public-ipv4 
+
+#### EFS - Elastic File System
+- similar to EBS, easy and simple way to provision user storage
+- automatic growing and shrinking
+- we can enable lifecycle management, similar to S3
+  - we can move less used to EFS IA (infrequent access)
+  - by default, replicated to all AZs in a Region
+- we need amazon-efs-utils (e.g. `yum install amazon-efs-utils`)
+- it needs a Security Group for provisioning
+  - needs NFS ports opened for it to work
+  - supports NFSv4
+- pay as you go, up to PetaBytes, supports thousands of concurrent NFS connections
+- **Read after Write consistency**
+- can be using encryption in transit or not 
 
 #### EC2 Security Groups
 - all changes to SGs take effect immediately
@@ -54,15 +75,24 @@ rating: na
 
 #### CloudWatch
 - monitors performance
-- 5 minute intervals by default (can be set to 1minute)
+- CloudTrail monitors API calls - it's more about auditing than performance
+- Standard monitoring is at 5 minute intervals by default (can be set to 1 minute, for Detailed Monitoring)
 - monitor service to check resources from AWS
   - host level metrics, CPU, network, disk, status
   - as well as applications
-- CloudTrail monitors API - it's more about auditing than performance
+- we can create Dashboards, can be global as well as regional
+- we can create Alarms
+- we can configure Events to respond to state changes
+
+##### AWS CLI
+- you need to setup access in IAM (Identity and Access Management)
+- `aws configure`
+- `aws s3 ls` - list all buckets
+- to provision ec2 or aws resources
 
 ### Region > AZ
 - 19 regions & 57 AZs
-- AZ think of it as a DataCenter
+- AZ (availability zone) think of it as a DataCenter
 - Region: a geographical area, made up of 2 or more AZ
 - Edge location: endpoints for caching content, used by CloudFront (CDN), ~ 150 edge locations currently
 - 4 levels of support, 3 paid, TAM only on Enterprise level support
@@ -87,6 +117,12 @@ rating: na
 - policies can be AWS or customer-managed
 - CloudWatch can manage/create billing alarms
 - SAML can give you federated SSO to AWS
+
+#### IAM Roles
+- ec2 instance -> Attach/Replace IAM Role
+- roles are more secure than just storing your access key + secret access key
+- roles are easier to manage
+- can be assigned after the instance is created and are GLOBAL (universal)
 
 ### Compute
 
