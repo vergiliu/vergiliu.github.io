@@ -6,9 +6,12 @@ tags: [video, reviews, 2017, 2019]
 rating: na
 ---
 
-## 2019
 ### EC2 (Elastic Compute Cloud)
-- pricing: on demand, reserved (1yr or 3yrs), spot, dedicated 
+- pricing: 
+  - on demand
+  - reserved (1yr or 3yrs)
+  - spot 
+  - dedicated 
 - spot terminated will not be charged if terminated by Amazon
 - first launch AMI cannot be encrypted (root can be encrypted later )
 - on EBS backed, default action is to terminate and delete the volume
@@ -21,7 +24,22 @@ rating: na
     - e.g. /local-ipv4 - local IP address
     - or /public-ipv4 
 
-#### EFS - Elastic File System
+##### EC2 Placement Groups
+- only certain types of instances can be launched
+- you can't move an existing instance into a placement group
+- clustered
+  - within a single AZ, same region, low latency, high throughput
+  - cant span multiple AZ
+- spread
+  - small number of critical instances, independent from each other
+  - in same AZ or different AZ
+  - for single instances
+- partitioned
+  - each segment on different partitions, on separate racks/blades
+  - multiple instances
+  - homogenous (same type) of instances are recommended
+
+##### EFS - Elastic File System
 - similar to EBS, easy and simple way to provision user storage
 - automatic growing and shrinking
 - we can enable lifecycle management, similar to S3
@@ -35,9 +53,9 @@ rating: na
 - **Read after Write consistency**
 - can be using encryption in transit or not 
 
-#### EC2 Security Groups
+##### EC2 Security Groups
 - all changes to SGs take effect immediately
-- SG are stateful, all inbound rules are added automatically to outbound rules
+- SG are STATEFUL, all inbound rules are added automatically to outbound rules
 - we cannot blacklist a particular port or IP address
 - 1 or more SGs can be assigned to an instance
 - all inbound traffic (everything) is BLOCKED by default
@@ -47,15 +65,21 @@ rating: na
 - we can specifically ALLOW rules, but not DENY rules
 - NACL are stateless, port or IP address can be blocked in NACLs
 
-#### EBS (Elastic Block Store)
+##### EBS (Elastic Block Store)
 - persistent block storage
-- 5 different flavours: general purpose SSD (16000 iops) - gps, provisioned IOPS (64000 iops) SSD io1, throughput HDD (500 iopsa) st1, Cold HDD (250 iops), EBS Magnetic
+- 5 different flavours: 
+  1. general purpose SSD (16000 iops) - gp2
+  2. provisioned IOPS (64000 iops) SSD io1
+  3. throughput HDD (500 iops) st1
+  4. Cold HDD (250 iops) sc1
+  5. EBS Magnetic - standard
   - max size is 16TB
-- ebs volume always on same AZ as the ec2 instance
+- ebs volume ALWAYS on same AZ as the ec2 instance
 - copy AMI to a different region by using snapshots
 - additional volumes will continue to persist on termination, root volume will be terminated
 - snapshots exist on S3, and are INCREMENTAL
 - AMIs can be created from both volumes and snapshots
+- you can stop instances to create a consistent snapshot
 - you can change volume types on the fly
 - AMI based on Region / OS / Arch / Launch Permissions / Storage for root device: Instance Store (ephemeral) / EBS Backed Volumes
   - EBS - from an EBS snapshot
@@ -64,7 +88,7 @@ rating: na
     - sometimes called ephermeral storage
     - if instance is stopped, all data is lost
 - EBS backed instance will not lose data on stop
-- by default, both root volumes will be deleted on termination - for EBS backed the default can be changed
+- by default, both root volumes will be deleted on termination - for EBS backed the default can be changed (termination protection)
 
 ##### Encrypted Root Device volumes and snapshots
 - an ec2 instance can be started with an encrypted root volume (new)
@@ -73,16 +97,17 @@ rating: na
   - snapshots of this will be encrypted automatically
   - volumes restored from encrypted snapshots are encrypted
 
-#### CloudWatch
+##### CloudWatch
 - monitors performance
+- we can create Dashboards, can be global as well as regional
+- we can create Alarms
+- we can configure Events to respond to state changes
+- logs - to store, monitor and aggregate performance data
 - CloudTrail monitors API calls - it's more about auditing than performance
 - Standard monitoring is at 5 minute intervals by default (can be set to 1 minute, for Detailed Monitoring)
 - monitor service to check resources from AWS
   - host level metrics, CPU, network, disk, status
   - as well as applications
-- we can create Dashboards, can be global as well as regional
-- we can create Alarms
-- we can configure Events to respond to state changes
 
 ##### AWS CLI
 - you need to setup access in IAM (Identity and Access Management)
@@ -90,7 +115,7 @@ rating: na
 - `aws s3 ls` - list all buckets
 - to provision ec2 or aws resources
 
-### Region > AZ
+##### Region > AZ
 - 19 regions & 57 AZs
 - AZ (availability zone) think of it as a DataCenter
 - Region: a geographical area, made up of 2 or more AZ
@@ -118,13 +143,11 @@ rating: na
 - CloudWatch can manage/create billing alarms
 - SAML can give you federated SSO to AWS
 
-#### IAM Roles
+##### IAM Roles
 - ec2 instance -> Attach/Replace IAM Role
 - roles are more secure than just storing your access key + secret access key
 - roles are easier to manage
 - can be assigned after the instance is created and are GLOBAL (universal)
-
-### Compute
 
 ####  S3 - Simple Storage Service
 - **read S3 FAQ before exam**
@@ -143,10 +166,19 @@ rating: na
 - storage classes (tiers)
   - S3 standard - can sustain loss of 2 facilities
   - S3 Infrequent Access (IA)
+    - min 128KB size charged
+    - objects stored for at least 30 days
   - S3 One Zone IA (reduced redundancy storage)
   - S3 Intelligent Tiering
   - S3 Glacier - for data archiving
+    - 3 retrieval speeds: expedited (1-5 mins), std (3-5hrs), bulk (5-12hrs)
+    - 90 days minimum
+    - extra 8kb + 32kb metadata
+    - bytes restored are relevant
   - S3 Glacier Deep Archive - 12hrs retrieval time
+    - 180 days
+    - std 12hrs, bulk 48hrs
+    - bytes restored are relevant
 - Control to buckets can be set using bucket policies 
 - by default all new buckets are _private_
 - S3 buckets can be configured to store access logs from S3 buckets access
@@ -175,6 +207,11 @@ rating: na
 - Transfer Acceleration
   - upload directly to Edge Location which in turn uploads to S3
 
+#### CostExplorer
+- forecasting, 3 months
+- last 13 months
+- recommendations / trends
+
 #### CloudFront
   - it is a global service - CDN
   - Edge Location - location where content will be cached - not an AZ nor Region
@@ -202,11 +239,17 @@ rating: na
     - Cached Volumes -> minimize the need of your local storage, only actively used data is stored -> stores data to S3
   - Tape Gateway - Virtual Tape Library -> archive data to cloud, virtual tapes to S3; directly to Glacier or Deep 
 
-### Database
+### Databases
+##### Amazon RDS - Relational Database Services
+- Multi AZ  for Disaster Recovery (auto failover)
+- Read Replicas for Performance (no auto failover) - up to 5 copies
+
 ### Security, Identity & Compliance
 ### Network & Content Delivery
 
 ---
+
+-----------------------------------
 
 ## 2017
 
