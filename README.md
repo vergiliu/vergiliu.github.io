@@ -3,7 +3,7 @@ vergiliu.github.io
 
 ### About
 
-Reviews of books, and rants about things ... 
+Reviews of books, and ranting about things ... 
 
 ### Theme Author is Mark Otto (mdo)
 
