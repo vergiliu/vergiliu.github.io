@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS.training"
-date: 2020-12-31 23:45:59
+date: 2021-12-31 23:45:59
 tags: [training, online, reviews]
 rating: na
 ---
@@ -21,6 +21,15 @@ To study:
 - autoscaling in console
 - https://aws.amazon.com/autoscaling/faqs/
 
+
+#### VPC
+- allow and deny incoming and outgoing traffic
+- ability to isolate and expose services
+- lives inside a Region, spans multiple AZs
+  - defines subnets, can be public or private
+- for a subnet to be public we need to attach an IGW to the VPC
+- if we want a private VPC to have access to the internet, we need to provide a NAT Gateway
+- NACL controls access to VPC, stateless
 
 ### Amazon Web Services
 ##### Auto Scaling
@@ -109,6 +118,7 @@ Analytical instead of transactional
   - SG at instance level - explicitly allow / stateful / applied to network interfaces (ENI)
   - NACL - allow and deny / stateless / applied to subnets
   - SG can span AZs , not regions
+  - SG is per region, so you need to create a new security group for each region you plan on having it
 - traffic in/out VPC:
   - IGW - connecting to internet
   - VPGW - connect to VPN
