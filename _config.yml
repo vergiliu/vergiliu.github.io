@@ -23,11 +23,11 @@ author:
   name:           Vergiliu
   url:            https://twitter.com/vergiliu
 
-paginate:         25
+paginate:         32
 
 # Custom vars
 
-version:          2020.00.1
+version:          2021.00.1
 
 gitlab:
   repo:           https://gitlab.com/vergiliu
