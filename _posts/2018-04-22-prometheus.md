@@ -4,6 +4,7 @@ title: "Prometheus"
 date: 2018-04-22 22:22:22
 tags: [tutorials, Prometheus, 2018]
 ---
+
 #### Prometheus
 - for live reload either enable `--web.enable-lifecycle` when starting up and then `curl -X POST localhost:9090/-/reload` _or_
 - `kill -1 $prometheus_PID` send SIGHUP

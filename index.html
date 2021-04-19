@@ -16,6 +16,9 @@ title: Home
     {% for tag in post.tags %}
     <a href="{{ page.baseurl }}/tags#{{tag}}">#{{tag}}</a>
     {% endfor %}
+    {% if post.rating %}
+    ⭐ * post.rating
+    {% endif %}
     <!-- {{ post.excerpt }} -->
   </div>
   {% endfor %}
