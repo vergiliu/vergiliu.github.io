@@ -11,7 +11,7 @@ permalink:        pretty
 relative_permalinks: false
 
 # site
-#url:              http://localhost:4000
+url:              "/"
 title:            rants and reviews
 tagline:          'rants and reviews'
 description:      "Online scratchpad for jotting down some ideas I've liked throughout the books I've read. And reviews, and other stuff as well"
@@ -23,10 +23,13 @@ author:
   name:           Vergiliu
   url:            https://twitter.com/vergiliu
 
-paginate:         20
+paginate:         32
 
 # Custom vars
-version:          0.4.2
 
+version:          2021.00.1
+
+gitlab:
+  repo:           https://gitlab.com/vergiliu
 github:
   repo:           https://github.com/vergiliu
